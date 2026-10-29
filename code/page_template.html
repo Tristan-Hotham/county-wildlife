@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Signature Species</title>
+<meta name="description" content="What makes your county's wildlife special? {{records_m}} million openly licensed NBN Atlas records since 2000, sorted into the species each of {{counties}} vice counties records far more often than Britain and Northern Ireland as a whole.">
+<meta property="og:title" content="Signature species: what makes your county's wildlife special">
+<meta property="og:description" content="The corncrake in the Inner Hebrides ({{corn_lq}}× its share elsewhere), the Manx shearwater in Pembrokeshire, the chough in Caernarvonshire: every county's over-represented species from {{records_m}} million open wildlife records.">
+<meta property="og:image" content="https://maps.tristanhotham.com/county-wildlife/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/county-wildlife/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* Meadow paper, moss ink, and one colour per group of species. */
+:root{
+  --bg:#F5F3E9; --panel:#ECE9DA; --fg:#1C2620; --muted:#5E665D; --rule:#DCD8C6; --card:#FBFAF4; --border:#C9C4AE;
+  --moss:#2F6B3A; --hot:#C4542A; --sea:#E3E9E6; --none:#E7E4D8; --few:#D9D6CB;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141A16; --panel:#1E2620; --fg:#E9EEE7; --muted:#A3AE9F; --rule:#2F3A31; --card:#1B231D; --border:#46534A;
+  --moss:#7DC08A; --hot:#EE8A5E; --sea:#18201C; --none:#26302A; --few:#2C342E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141A16; --panel:#1E2620; --fg:#E9EEE7; --muted:#A3AE9F; --rule:#2F3A31; --card:#1B231D; --border:#46534A;
+  --moss:#7DC08A; --hot:#EE8A5E; --sea:#18201C; --none:#26302A; --few:#2C342E; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:680px;margin:0 auto;padding-block:28px 64px}
+.wrap .bleed{width:min(1160px,calc(100vw - 32px));margin-left:calc((100% - min(1160px,100vw - 32px))/2);margin-right:0}
+a{color:inherit;text-decoration-color:var(--moss);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--moss);color:#fff;padding:5px 8px;font-weight:500}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kicker b{color:#141A16}}
+:root[data-theme="dark"] .kicker b{color:#141A16}
+header.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:end;border-bottom:6px double var(--fg);padding-bottom:22px;margin-top:18px}
+h1{font:900 clamp(46px,11.5vw,96px)/.9 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1 .a{color:var(--moss)}
+.mark{width:clamp(78px,17vw,128px);height:auto;display:block}
+.dek{grid-column:1/-1;font-size:21px;line-height:1.42;margin:8px 0 0;max-width:50ch}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:52px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--moss);display:block;letter-spacing:.1em;margin-bottom:10px}
+h3{font:600 20px/1.25 var(--display);margin:28px 0 6px}
+p{margin:0 0 16px}
+.lede::first-letter{font:900 72px/.8 var(--display);float:left;margin:6px 10px 0 0;color:var(--moss)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 8px}
+.stats div{background:var(--card);padding:14px 12px}
+.stats b{display:block;font:900 clamp(26px,5.6vw,38px)/1 var(--display);color:var(--fg)}
+.stats b.m{color:var(--moss)} .stats b.h{color:var(--hot)}
+.stats span{font:400 12px/1.35 var(--mono);color:var(--muted);display:block;margin-top:6px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.figure{margin:26px 0 30px}
+.fig-h{font:600 19px/1.25 var(--display);margin:0 0 4px}
+.fig-sub{font:400 13px/1.45 var(--mono);color:var(--muted);margin:0 0 12px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--fg)}
+.lab{font-size:12px}.lab.m{fill:var(--muted)}.lab.b{font-weight:500}.lab.s{font-size:11px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:400 12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:280px;z-index:1000;transform:translate(-50%,calc(-100% - 12px));display:none}
+.btn{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 10px;cursor:pointer;min-height:36px;white-space:nowrap}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
+.ctlrow{display:flex;gap:8px;align-items:center;margin:0 0 8px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+.ctlrow label.l{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:0 0 auto}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:3px;overflow:hidden;flex:0 0 auto}
+.seg .btn{border:0;border-radius:0;border-right:1px solid var(--border)}
+.seg .btn:last-child{border-right:0}
+.seg .btn i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+select{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 8px;min-height:36px}
+.searchbox{position:relative;flex:1 1 260px;min-width:0}
+input[type=search]{font:400 15px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 11px;min-height:40px;width:100%}
+.suggest{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:var(--card);border:1px solid var(--border);z-index:1001;font:400 13px/1.3 var(--mono);display:none;max-height:340px;overflow:auto}
+.suggest li{padding:8px 10px;cursor:pointer;border-bottom:1px solid var(--rule)}
+.suggest li span{color:var(--muted)}
+.suggest li[aria-selected="true"],.suggest li:hover{background:var(--panel)}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:18px;align-items:start}
+@media (max-width:900px){.mapgrid{grid-template-columns:1fr}}
+#lmap{height:760px;border:1px solid var(--border);background:var(--sea);border-radius:2px}
+@media (max-width:900px){#lmap{height:600px}}
+@media (max-width:600px){#lmap{height:min(66vh,520px);min-height:380px}}
+.leaflet-container{font:400 12px/1.4 var(--mono);background:var(--sea)}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--card);color:var(--fg);border-bottom-color:var(--border)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--card) 85%,transparent)!important;color:var(--muted)}
+@media (max-width:600px){.leaflet-control-attribution{font-size:10px;line-height:1.25}}
+.leaflet-control-attribution a{color:var(--fg)}
+.city{font:500 11px/1 var(--mono);color:var(--fg);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg);pointer-events:none}
+.city i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--fg);margin-right:4px;vertical-align:1px}
+.city.r0,.city.r1{font-size:10px;font-weight:400}
+.splab{font:600 11.5px/1.15 var(--display);color:var(--fg);text-align:center;white-space:nowrap;pointer-events:none;text-shadow:0 0 3px var(--card),0 0 3px var(--card),0 0 4px var(--card)}
+.splab small{display:block;font:400 9.5px/1.2 var(--mono);color:var(--muted)}
+.where{background:color-mix(in srgb,var(--card) 90%,transparent);border:1px solid var(--border);border-radius:3px;padding:5px 8px;font:500 11.5px/1.3 var(--mono);color:var(--fg);max-width:230px;pointer-events:none}
+.where span{color:var(--muted);font-weight:400}
+.lyrBtn{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;font:600 12px/1 var(--mono);padding:8px 10px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.lyrBtn[aria-expanded="true"]{background:var(--fg);color:var(--bg)}
+.lyrPanel{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 12px 8px;margin-top:6px;width:236px;box-shadow:0 2px 10px rgba(0,0,0,.15);font:400 12px/1.3 var(--mono)}
+.lyrPanel[hidden]{display:none}
+.lyrPanel .row{display:grid;grid-template-columns:auto 1fr;gap:4px 8px;align-items:center;margin:0 0 9px}
+.lyrPanel label{display:flex;gap:6px;align-items:center;cursor:pointer;font-weight:600}
+.lyrPanel input[type=range]{width:100%;accent-color:var(--fg)}
+.lyrPanel select{font:400 12px var(--mono);background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:2px;padding:2px 4px;width:100%;min-height:0}
+.lyrPanel .sub{grid-column:1/-1;display:flex;gap:6px;align-items:center;color:var(--muted);font-size:11px}
+.lyrPanel .sub span{flex:0 0 52px}
+.lyrPanel .reset{font:400 11px var(--mono);color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.side{background:var(--card);border:1px solid var(--border);padding:14px 14px 10px}
+.side h4{font:500 11px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+#legend{font:400 12px/1.35 var(--mono);margin-bottom:10px}
+#legend .sw{display:inline-block;width:12px;height:12px;vertical-align:-1px;margin-right:6px;border:1px solid var(--border)}
+#legend .ramp{height:12px;border:1px solid var(--border);margin:4px 0 2px}
+#legend .ends{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+#legend .gl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 8px}
+#info{border-top:1px solid var(--rule);padding-top:10px;font:400 12.5px/1.45 var(--mono)}
+#info .cn{font:800 24px/1.1 var(--display);margin:0 0 2px}
+#info .meta{color:var(--muted);font-size:11.5px;margin-bottom:8px}
+#info .sig{font:600 18px/1.25 var(--display);margin:6px 0 2px}
+#info .sig em{font:italic 400 13px var(--body);color:var(--muted)}
+.bars{margin:6px 0 10px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:6px;align-items:center;margin:3px 0;cursor:pointer}
+.bar .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .v{text-align:right;font-weight:500}
+.bar .k{grid-column:1/-1;height:5px;background:var(--rule);position:relative}
+.bar .k b{position:absolute;left:0;top:0;bottom:0}
+.bar:hover .t{text-decoration:underline}
+#info ul{margin:4px 0 8px;padding-left:18px}
+.chip{display:inline-flex;gap:8px;align-items:center;background:var(--fg);color:var(--bg);font:500 12px/1 var(--mono);padding:8px 10px;border-radius:3px;white-space:nowrap}
+.chip button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0 0 0 4px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+@media (max-width:600px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-left:10px solid var(--moss);padding:12px 14px;font:400 13px/1.5 var(--mono);cursor:pointer;text-align:left;color:var(--fg)}
+.card b{font:600 19px/1.2 var(--display);display:block;margin-bottom:2px}
+.card .big{font:900 30px/1.05 var(--display);margin:6px 0 2px}
+.card .big span{color:var(--muted);font:400 13px/1 var(--mono)}
+.card:hover{background:var(--panel)}
+.pull{font:600 26px/1.25 var(--display);border-left:6px solid var(--moss);padding:4px 0 4px 18px;margin:30px 0}
+.note{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;font-size:16px;margin:22px 0}
+.note h3{margin-top:0}
+table.t{width:100%;border-collapse:collapse;font:400 13px/1.35 var(--mono)}
+table.t th{text-align:left;font-weight:500;color:var(--muted);border-bottom:2px solid var(--fg);padding:6px 8px 6px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:7px 8px 7px 0;vertical-align:top}
+table.t td.num,table.t th.num{text-align:right;white-space:nowrap}
+table.t td small{color:var(--muted);display:block}
+table.t tr.go{cursor:pointer}
+table.t tr.go:hover td{background:var(--panel)}
+.tablewrap{overflow-x:auto}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--moss);border-color:var(--moss);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{position:fixed;right:12px;bottom:12px;z-index:1002}
+@media print{.theme,.ctlrow{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker"><b>Data study</b><span>Nature</span><span>Britain and Northern Ireland, records since 2000</span></div>
+<header class="hero">
+  <h1>Signature <span class="a">species</span></h1>
+  <svg class="mark" viewBox="0 0 120 120" aria-hidden="true">
+    <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path d="M60 104 C60 70 60 50 60 26" stroke="#2F6B3A" stroke-width="4" fill="none"/>
+    <path d="M60 78 C44 72 34 60 30 44 C46 46 56 56 60 70 Z" fill="#2F6B3A"/>
+    <path d="M60 62 C74 56 84 44 88 30 C72 32 62 42 60 54 Z" fill="#4F8A2B"/>
+    <circle cx="60" cy="24" r="7" fill="#C4542A"/>
+  </svg>
+  <p class="dek">What makes your county's wildlife special? I sorted {{records_m}} million openly licensed wildlife records into the {{counties}} vice counties of Britain and Northern Ireland and asked, for each one, which species turn up far more often there than anywhere else.</p>
+</header>
+<div class="byline">Dr Tristan Hotham, Independent researcher · 2026 · Data: NBN Atlas (records under CC0, CC BY and OGL only); vice county boundaries from the Biological Records Centre and OpenStreetMap</div>
+
+<div class="stats">
+  <div><b>{{records_m}}m</b><span>open wildlife records since 2000, all at species level</span></div>
+  <div><b class="m">{{counties}}</b><span>vice counties: {{gb_vcs}} in Britain and the Isle of Man, {{ni_vcs}} in Northern Ireland</span></div>
+  <div><b class="h">{{corn_lq}}×</b><span>the corncrake's share of bird records in the {{corn_c}}, against the UK as a whole</span></div>
+  <div><b>{{eff_ratio}}×</b><span>more records per km² in {{eff_max_name}} than in {{eff_min_name}}: effort varies</span></div>
+</div>
+
+<p class="lede">Every county has a creature that seems to belong to it. Pembrokeshire has its shearwaters, Norfolk its swallowtails, the Scottish islands their corncrakes. Naturalists have long divided Britain into "vice counties", fixed recording areas drawn up in the nineteenth century so that records from different decades can be compared, and the National Biodiversity Network's Atlas now holds hundreds of millions of sightings tagged with them. I used only the records that are openly licensed, and only those since 2000, and asked a simple question of each county: which species make up a much bigger share of its records than they do of the records for Britain and Northern Ireland as a whole?</p>
+<p>That share is a <i>location quotient</i>. A bird with a quotient of 10 in a county makes up ten times as large a slice of that county's bird records as it does of all bird records. Comparing shares rather than raw counts matters, because some counties are recorded far more heavily than others: {{eff_max_name}} has {{eff_max}} records per square kilometre, {{eff_min_name}} {{eff_min}}. The map shows each county's strongest signature species. Choose a group, tap a county, or search for any of {{picker}} species to see where it is over-represented.</p>
+
+<h2 class="bleed"><span class="n">01 · The map</span>Each county's signature species</h2>
+<div class="bleed">
+  <div class="ctlrow" role="toolbar" aria-label="What to map">
+    <label class="l">Show</label>
+    <div class="seg" id="modeSeg">
+      <button class="btn" data-m="sig" aria-pressed="true">Signature</button>
+      <button class="btn" data-m="dist" aria-pressed="false">How distinctive</button>
+      <button class="btn" data-m="sp" aria-pressed="false">One species</button>
+      <button class="btn" data-m="new" aria-pressed="false">Newcomers</button>
+      <button class="btn" data-m="eff" aria-pressed="false">Recording effort</button>
+    </div>
+  </div>
+  <div class="ctlrow" id="grpRow" role="toolbar" aria-label="Group of species">
+    <label class="l">Group</label>
+    <div class="seg" id="grpSeg"></div>
+  </div>
+  <div class="ctlrow" id="spRow" style="display:none">
+    <span id="spChip"></span>
+    <select id="newSel" aria-label="Newcomer species" style="display:none"></select>
+  </div>
+  <div class="ctlrow" style="overflow:visible">
+    <div class="searchbox">
+      <input type="search" id="q" placeholder="Find a place, county or species" autocomplete="off" aria-label="Find a place, county or species" role="combobox" aria-expanded="false" aria-controls="sug">
+      <ul class="suggest" id="sug" role="listbox"></ul>
+    </div>
+  </div>
+  <div class="mapgrid">
+    <div id="lmap" role="region" aria-label="Map of vice counties"></div>
+    <div class="side">
+      <h4 id="legH">Key</h4>
+      <div id="legend"></div>
+      <div id="info">Tap a county on the map.</div>
+    </div>
+  </div>
+  <div class="src">Colour strength shows how strongly the species is over-represented (its location quotient). A county is left grey for a group with fewer than {{min_group}} records of that group since 2000 ({{min_group_small}} for mammals, amphibians and reptiles, and dragonflies). Scroll or pinch to zoom; use Map layers for hills, place names and borders.</div>
+</div>
+
+<h2><span class="n">02 · Signatures</span>Seabirds, butterflies and deer</h2>
+<p>Across all animals, a bird is the signature of {{n_birds}} counties, a mammal of {{n_mammals}}, a butterfly of {{n_butterflies}}, a dragonfly or damselfly of {{n_dragonflies}} and an amphibian or reptile of {{n_herps}}. The strongest signals come from species that are common where they occur and almost absent elsewhere: mountain and island specialists, seabird colonies, and a few animals that people introduced to one corner of the country.</p>
+<div class="cards" id="cards"></div>
+<div class="figure">
+  <div class="fig-h">What kind of animal is each county's signature?</div>
+  <div class="fig-sub">Number of vice counties whose strongest over-represented animal (birds, mammals, amphibians and reptiles, butterflies, dragonflies) belongs to each group</div>
+  <div class="chart" id="chGroups"></div>
+</div>
+<p>The Scotch argus, a dark brown butterfly of damp Highland grassland, is the animal signature of {{scotch_argus_n}} Scottish counties, more than any other species. The hooded crow, which replaces the carrion crow in Ireland and the north west of Scotland, is the signature bird of {{hooded_ni}} of the 6 Northern Irish vice counties. Some signatures are introduced: Chinese water deer in the fens, wild boar in the Forest of Dean ({{boar_c}}, {{boar_lq}}×), wall lizards on the Isle of Wight, and stoats on Orkney ({{stoat_lq}}×), where they were first reported in about 2010 and now threaten ground-nesting birds.</p>
+<p class="pull">The {{ring_sp}} makes up {{ring_lq}} times as large a share of butterfly records in {{ring_c}} as it does across the UK. It is the most concentrated signature on the map.</p>
+
+<h2><span class="n">03 · Distinctiveness</span>Which counties are least like the rest?</h2>
+<p>A second question is how different a county's whole list is from the national list. For each group I measured how much of a county's records would have to be moved between species to match the national mix (the "total variation distance", from 0 for identical to 1 for no overlap), then subtracted the distance a random sample of the same size would show by chance, so that thinly recorded counties do not look distinctive just because they are small. Averaged over the five animal groups, {{dist_top}}, {{dist_2}} and {{dist_3}} are the most distinctive; {{dist_low}} and {{dist_low2}} are the most typical. On average Scotland's counties score {{dist_sco}}, Northern Ireland's {{dist_ni}}, Wales's {{dist_wal}} and England's {{dist_eng}}.</p>
+<div class="figure">
+  <div class="fig-h">How distinctive is each county's animal life?</div>
+  <div class="fig-sub">Distance from the national mix of species beyond what chance would give, averaged over birds, mammals, amphibians and reptiles, butterflies, and dragonflies. Each dot is a vice county; tap one to map it.</div>
+  <div class="chart" id="chDist"></div>
+</div>
+
+<h2><span class="n">04 · Newcomers</span>Spreading across the map</h2>
+<p>The same records show species arriving. The harlequin ladybird, a non-native beetle first found in Britain in 2004, had records in {{harl_2}} vice counties in 2000 to 2009 and {{harl_4}} since 2020. The tree bumblebee, which colonised naturally from the continent, went from {{tree_2}} to {{tree_4}}. The little egret, a rarity before the 1990s, was recorded at least twice in just {{egret_0}} vice county in 1970 to 1989 and in {{egret_4}} since 2020. The ring-necked parakeet, long a London speciality, has records in {{para_4}} counties since 2020, against {{para_2}} in 2000 to 2009. Recording itself has grown, so these counts show where a species has been seen at least twice in a period, not exact ranges; switch the map to Newcomers to see the order in which counties joined.</p>
+<div class="figure">
+  <div class="fig-h">Vice counties with at least two records, by period</div>
+  <div class="fig-sub">Open-licence records only. The first period is 20 years long, the last runs from 2020 to 2026. Out of {{counties}} vice counties.</div>
+  <div class="chart" id="chNew"></div>
+</div>
+
+<h2><span class="n">05 · Only here</span>Species recorded in a single county</h2>
+<p>{{only_total}} species in the seven groups have at least {{only_min}} records since 2000, all from one vice county. Most are plants ({{only_plants}}) and moths ({{only_moths}}), many of them garden escapes or recent arrivals; {{only_top}} and {{only_top2}} have the most ({{only_top_n}} each). The animals among them are a strange crowd: lone vagrants that stayed for weeks, escaped exotic birds, and one famous bat.</p>
+<div class="tablewrap"><table class="t" id="onlyT"></table></div>
+
+<h2><span class="n">06 · Effort</span>Where the recorders are</h2>
+<p>Records are not wildlife. They are wildlife multiplied by people looking, and the people are not spread evenly. The median county has {{eff_median}} open records per square kilometre since 2000; the busiest, {{eff_max_name}}, has {{eff_max}}. Location quotients compare each county with itself, which removes the overall level of effort, but they cannot remove effort that falls unevenly on particular species, such as a big local survey of one animal.</p>
+<div class="figure">
+  <div class="fig-h">Open records per square kilometre since 2000</div>
+  <div class="fig-sub">Each dot is a vice county (log scale). Tap one to map it.</div>
+  <div class="chart" id="chEff"></div>
+</div>
+
+<div class="note" id="method">
+  <h3>How I did this</h3>
+  <p><b>Records.</b> I queried the NBN Atlas occurrence web service on {{retrieved}} for records that are identified to species, marked as present, dated 2000 or later and published under an open licence: CC0, CC BY or the Open Government Licence. That gives {{records_open}} records ({{cc_by}} CC BY, {{ogl}} OGL, {{cc0}} CC0), of which {{records}} fall in a vice county. Records under CC BY NC, which include large national schemes, are left out, so some groups (moths especially) are thin, and some counties' totals rest on a few big datasets; the county panel lists the largest. I only downloaded counts by county and species, never individual records, and NBN Atlas already blurs the locations of sensitive species.</p>
+  <p><b>Counties.</b> The units are the Watsonian vice counties of Great Britain (1 to 112, including the Isle of Man) and the six Irish vice counties in Northern Ireland (H33, H36 to H40), as assigned by the Atlas. They are stable recording areas, close to the historic counties, not today's local authorities.</p>
+  <p><b>Groups.</b> Birds, mammals, amphibians and reptiles, dragonflies and damselflies, and flowering plants follow the Atlas's species groups; butterflies are the six butterfly families within Lepidoptera and moths are the rest. Domestic animals were dropped.</p>
+  <p><b>Location quotients.</b> For species <i>s</i> in group <i>g</i> and county <i>c</i>, LQ = (records of <i>s</i> in <i>c</i> ÷ records of <i>g</i> in <i>c</i>) ÷ (records of <i>s</i> everywhere ÷ records of <i>g</i> everywhere). To avoid tiny-sample artefacts I only rank species with at least {{min_sp_vc}} records in the county and {{min_sp_uk}} in all, only show a group for a county with at least {{min_group}} records of it ({{min_group_small}} for the three small groups), and rank by a cautious version of the quotient that uses the lower end of a {{ci}}% Poisson interval for the county count. The page shows the plain quotient.</p>
+  <p><b>Limits.</b> A record is a sighting someone chose to submit, so quotients mix where a species lives with where people look for it, and with who shares their data openly. Escaped and vagrant birds can rank highly where a single bird drew many visitors. Seas around a county are partly included, so whales, dolphins and seals appear as coastal signatures. Plant records from the BSBI atlas are counts of grid squares rather than individual sightings. Treat each signature as "recorded unusually often here", not as a census.</p>
+</div>
+<div class="cta">
+  <a class="p" href="{{REPO}}">Data and code</a>
+  <a href="https://doi.org/{{DOI}}">Paper (Zenodo)</a>
+  <a href="{{BLOG}}">Blog post</a>
+  <a href="https://maps.tristanhotham.com/tree-map/">What grows where</a>
+  <a href="https://blog.tristanhotham.com/">All posts</a>
+</div>
+<footer>
+  <p>Dr Tristan Hotham, Independent researcher. ORCID 0000-0003-4931-9349. Cite as: Hotham, T. (2026) Signature species: what makes each county's wildlife special. https://doi.org/{{DOI}}</p>
+  <p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+  <p>Wildlife records: NBN Atlas (https://nbnatlas.org), occurrence web services, retrieved {{retrieved}}; only records under CC0, CC BY 4.0 and the Open Government Licence were used, with thanks to the many recording schemes, societies, records centres and volunteers who publish them. Vice county boundaries: Biological Records Centre, github.com/BiologicalRecordsCentre/vice-counties (GPL 3.0), and Irish vice counties from OpenStreetMap contributors via github.com/SK53/Irish-Vice-Counties (ODbL). Place names: GeoNames (CC BY 4.0). Map tiles © Esri. Map library: Leaflet.</p>
+  <p>Data files: CC BY 4.0 for the counts (derived from openly licensed NBN Atlas records; attribution to NBN Atlas and its data providers), boundary file under its own licences as above. Text and figures: CC BY 4.0. Code: MIT. Other studies: <a href="https://maps.tristanhotham.com/tree-map/">What grows where</a>, <a href="https://maps.tristanhotham.com/sun-and-rain-uk/">Sun and rain in the UK</a>, <a href="https://maps.tristanhotham.com/dark-skies/">Dark skies</a>, <a href="https://blog.tristanhotham.com/">all posts</a>.</p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+<button class="btn theme" id="theme" aria-label="Toggle dark mode">◐</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const PG = /*PAGE*/;
+const NS = "http://www.w3.org/2000/svg";
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const fmt = n => n == null || isNaN(n) ? "n/a" : Math.round(n).toLocaleString("en-GB");
+const fq = v => v >= 10 ? Math.round(v).toLocaleString("en-GB") : v.toFixed(1);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const tip = document.getElementById("tip");
+function showTip(h, x, y) { tip.innerHTML = h; tip.style.display = "block"; const w = tip.offsetWidth; x = Math.max(w / 2 + 8, Math.min(innerWidth - w / 2 - 8, x)); tip.style.left = x + scrollX + "px"; tip.style.top = y + scrollY + "px"; }
+function hideTip() { tip.style.display = "none"; }
+function hover(node, h) { node.style.cursor = "pointer"; const s = ev => { const r = node.getBoundingClientRect(); showTip(h, r.left + r.width / 2, r.top); }; node.addEventListener("pointerenter", s); node.addEventListener("pointerleave", hideTip); }
+const redraws = [];
+function resp(box, render) { let last = 0; const go = (force) => { const w = Math.max(280, Math.round(box.clientWidth)); if (!force && Math.abs(w - last) < 4) return; last = w; box.innerHTML = ""; render(w, w < 560); }; new ResizeObserver(() => go()).observe(box); go(); redraws.push(() => go(true)); }
+const isDark = () => document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+
+/* ===== data ===== */
+const GK = PG.groups.map(g => g[0]);
+const GL = Object.fromEntries(PG.groups.map(g => [g[0], g[1]]));
+const GC = Object.fromEntries(PG.groups.map(g => [g[0], g[2]]));
+const NG = Object.fromEntries(PG.groups.map(g => [g[0], g[3]]));
+const ANIMALS = ["birds", "mammals", "herps", "butterflies", "dragonflies"];
+const SMALL = new Set(["mammals", "herps", "dragonflies"]);
+const MING = g => SMALL.has(g) ? {{min_group_small}} : {{min_group_raw}};
+const C = PG.counties, CBY = Object.fromEntries(C.map((c, i) => [c.id, i]));
+const SHORT = { birds: "Birds", mammals: "Mammals", herps: "Amphibians, reptiles", butterflies: "Butterflies", moths: "Moths", dragonflies: "Dragonflies", plants: "Plants" };
+let SPV = null, SPI = null;
+function loadSpecies() { if (SPV) return Promise.resolve(); return fetch("data/species_vc.json").then(r => r.json()).then(j => { SPV = j.species; SPI = new Map(SPV.map((s, k) => [s[0].toLowerCase(), k])); }); }
+
+const S = { mode: "sig", g: "animals", sp: null, nc: 0, sel: null };
+
+/* ===== colours ===== */
+function hex(h) { return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]; }
+function mix(a, b, t) { const A = hex(a), B = hex(b); return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join(""); }
+const BGH = () => isDark() ? "#1E2620" : "#F3F1E6";
+function strength(lq) { return Math.max(.18, Math.min(1, Math.log10(Math.max(lq, 1)) / Math.log10(300))); }
+const RAMP = { dist: ["#F1EFD9", "#B9D3A0", "#5E9E5E", "#245A3A", "#0E2E22"], eff: ["#F0EEE6", "#C9D6DE", "#86A7BD", "#3F6E8F", "#16364F"], new: ["#2B1B4A", "#6B2E78", "#B4497A", "#E58466", "#F6D28B"] };
+function ramp(name, t) { const r = RAMP[name]; t = Math.max(0, Math.min(1, t)) * (r.length - 1); const i = Math.min(r.length - 2, Math.floor(t)); return mix(r[i], r[i + 1], t - i); }
+function sigOf(c, g) { if (g === "animals") return c.animal ? { sp: c.animal[0], sci: c.animal[1], n: c.animal[2], lq: c.animal[3], g: c.animal[5] } : null; const t = c.top[g] && c.top[g][0]; return t ? { sp: t[0], sci: t[1], n: t[2], lq: t[3], g } : null; }
+function distOf(c, g) { if (g === "animals") { const v = ANIMALS.map(k => c.dist[GK.indexOf(k)]).filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; } return c.dist[GK.indexOf(g)]; }
+function spStat(ci) { const s = SPV[S.sp], g = GK[s[2]], arr = s[4]; let n = 0; for (let k = 0; k < arr.length; k += 2) if (arr[k] === ci) { n = arr[k + 1]; break; } const gc = C[ci].gc[s[2]]; const few = gc < MING(g); const lq = gc ? (n / gc) / (s[3] / NG[g]) : 0; return { n, gc, few, lq, g }; }
+function newFirst(ci) { const nc = PG.newcomers[S.nc]; for (const v of nc[4]) if (Math.floor(v / 10) === ci) return v % 10; return -1; }
+function fillOf(ci) {
+  const c = C[ci];
+  if (S.mode === "sig") { const s = sigOf(c, S.g); if (!s) return css("--few"); return mix(BGH(), GC[s.g], .22 + .78 * strength(s.lq)); }
+  if (S.mode === "dist") { const v = distOf(c, S.g); return v == null ? css("--few") : ramp("dist", (v - .1) / .55); }
+  if (S.mode === "eff") { return ramp("eff", (Math.log10(c.rec / c.area) - 1.4) / 1.6); }
+  if (S.mode === "sp") { if (S.sp == null || !SPV) return css("--none"); const t = spStat(ci); if (t.few && !t.n) return css("--few"); if (!t.n) return css("--none"); const col = GC[t.g]; if (t.lq >= 1) return mix(BGH(), col, .3 + .7 * Math.min(1, Math.log2(t.lq) / 5)); return mix(BGH(), isDark() ? "#5B6B78" : "#8FA3B3", .25 + .55 * Math.min(1, -Math.log2(t.lq) / 4)); }
+  if (S.mode === "new") { const f = newFirst(ci); return f < 0 ? css("--none") : ramp("new", f / 4); }
+  return css("--none");
+}
+
+/* ===== map ===== */
+let lmap, vcL, GEO = null, PLACES = [], labL, nameL, tileBase, tileHill, whereCtl;
+const LY = { base: "light", hills: false, hillK: 40, names: true, nameLvl: 1, lines: true, lineK: 55, labels: true, colour: 90 };
+const LYDEF = { ...LY };
+try { Object.assign(LY, JSON.parse(localStorage.getItem("cw_layers") || "{}")); } catch (e) {}
+const saveLY = () => { try { localStorage.setItem("cw_layers", JSON.stringify(LY)); } catch (e) {} };
+const TILE = { light: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", dark: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}" };
+function styleOf(f) {
+  const ci = CBY[f.properties.id], sel = S.sel === ci;
+  return { fillColor: fillOf(ci), fillOpacity: LY.colour / 100, color: sel ? (isDark() ? "#fff" : "#111") : (isDark() ? "#E9EEE7" : "#1C2620"), weight: sel ? 2.6 : LY.lines ? .4 + LY.lineK / 100 * 1.2 : 0, opacity: sel ? 1 : LY.lines ? .25 + LY.lineK / 100 * .65 : 0 };
+}
+function restyle() { if (vcL) { vcL.setStyle(styleOf); if (S.sel != null) vcL.eachLayer(l => { if (CBY[l.feature.properties.id] === S.sel) l.bringToFront(); }); } labels(); legend(); info(); }
+function initMap() {
+  if (!window.L) { document.getElementById("lmap").innerHTML = '<p style="padding:16px">The map library did not load.</p>'; return; }
+  lmap = L.map("lmap", { zoomSnap: .25, zoomDelta: .5, minZoom: 4.5, maxZoom: 12, scrollWheelZoom: false, preferCanvas: true, maxBounds: [[47.5, -14], [62.5, 6]] });
+  lmap.fitBounds([[49.9, -8.2], [60.9, 1.8]], { paddingTopLeft: [4, 4], paddingBottomRight: [4, 20] });
+  lmap.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
+  lmap.createPane("labels"); lmap.getPane("labels").style.zIndex = 650; lmap.getPane("labels").style.pointerEvents = "none";
+  lmap.createPane("hill"); lmap.getPane("hill").style.zIndex = 250;
+  tileHill = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}", { pane: "hill", maxZoom: 13, attribution: "Hillshade © Esri" });
+  lmap.on("click", () => lmap.scrollWheelZoom.enable());
+  labL = L.layerGroup().addTo(lmap); nameL = L.layerGroup().addTo(lmap);
+  const W = L.Control.extend({ options: { position: "topleft" }, onAdd() { const d = L.DomUtil.create("div", "where"); d.id = "where"; return d; } });
+  whereCtl = new W(); lmap.addControl(whereCtl);
+  initLayers();
+  Promise.all([fetch("data/vice_counties.geojson").then(r => r.json()), fetch("data/places.json").then(r => r.json())]).then(([g, p]) => {
+    GEO = g; PLACES = p;
+    vcL = L.geoJSON(g, { style: styleOf, onEachFeature: (f, l) => {
+      l.on("click", () => select(CBY[f.properties.id], false));
+      l.on("mouseover", e => { const ci = CBY[f.properties.id]; if (matchMedia("(hover:hover)").matches) l.bindTooltip(tipText(ci), { sticky: true, direction: "top", className: "" }).openTooltip(e.latlng); });
+    } }).addTo(lmap);
+    lmap.attributionControl.addAttribution("Records: NBN Atlas (CC0, CC BY, OGL) | Vice counties: BRC (GPL 3.0), OSM (ODbL) | GeoNames");
+    lmap.on("zoomend moveend", () => { labels(); placeNames(); where(); });
+    applyLayers(); restyle(); where();
+  });
+}
+function tipText(ci) {
+  const c = C[ci];
+  if (S.mode === "sig") { const s = sigOf(c, S.g); return `<b>${esc(c.name)}</b><br>${s ? esc(s.sp) + " " + fq(s.lq) + "×" : "too few records"}`; }
+  if (S.mode === "dist") { const v = distOf(c, S.g); return `<b>${esc(c.name)}</b><br>${v == null ? "too few records" : "distinctiveness " + v.toFixed(2)}`; }
+  if (S.mode === "eff") return `<b>${esc(c.name)}</b><br>${fmt(c.rec / c.area)} records per km²`;
+  if (S.mode === "sp" && SPV && S.sp != null) { const t = spStat(ci); return `<b>${esc(c.name)}</b><br>${fmt(t.n)} records${t.n ? ", " + fq(t.lq) + "×" : ""}`; }
+  if (S.mode === "new") { const f = newFirst(ci); return `<b>${esc(c.name)}</b><br>${f < 0 ? "fewer than 2 records in any period" : "first: " + PG.periods[f]}`; }
+  return esc(c.name);
+}
+/* ===== map layers ===== */
+function initLayers() {
+  const Ctl = L.Control.extend({ options: { position: "topright" }, onAdd() {
+    const d = L.DomUtil.create("div"); L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+    d.innerHTML = `<button class="lyrBtn" aria-expanded="false" aria-controls="lyrPanel">Map layers</button>
+<div class="lyrPanel" id="lyrPanel" hidden>
+ <div class="row"><label style="font-weight:600">Base map</label><span></span><div class="sub"><span>tiles</span><select id="lyBase" aria-label="Base map"><option value="light">Light grey (Esri)</option><option value="dark">Dark grey (Esri)</option><option value="none">None</option></select></div></div>
+ <div class="row"><label><input type="checkbox" id="lyHills"> Hills</label><span></span><div class="sub"><span>strength</span><input type="range" id="lyHillK" min="10" max="100" step="5" aria-label="Hill shading strength"></div></div>
+ <div class="row"><label><input type="checkbox" id="lyNames"> Place names</label><span></span><div class="sub"><span>how many</span><select id="lyNameLvl" aria-label="How many place names"><option value="0">Cities only</option><option value="1">Cities and towns</option><option value="2">Down to villages</option></select></div></div>
+ <div class="row"><label><input type="checkbox" id="lyLabels"> Species labels</label><span></span></div>
+ <div class="row"><label><input type="checkbox" id="lyLines"> County borders</label><span></span><div class="sub"><span>strength</span><input type="range" id="lyLineK" min="10" max="100" step="5" aria-label="Border strength"></div></div>
+ <div class="row"><label style="font-weight:600">Colour</label><span></span><div class="sub"><span>strength</span><input type="range" id="lyColour" min="20" max="100" step="5" aria-label="Colour strength"></div></div>
+ <button class="reset" id="lyReset">Reset layers</button>
+</div>`;
+    return d; } });
+  lmap.addControl(new Ctl());
+  const q = id => document.getElementById(id), btn = lmap.getContainer().querySelector(".lyrBtn"), pan = q("lyrPanel");
+  btn.onclick = () => { const o = pan.hidden; pan.hidden = !o; btn.setAttribute("aria-expanded", o); };
+  const sync = () => { q("lyBase").value = LY.base; q("lyHills").checked = LY.hills; q("lyHillK").value = LY.hillK; q("lyNames").checked = LY.names; q("lyNameLvl").value = LY.nameLvl; q("lyLabels").checked = LY.labels; q("lyLines").checked = LY.lines; q("lyLineK").value = LY.lineK; q("lyColour").value = LY.colour; };
+  const on = (id, ev, f) => q(id).addEventListener(ev, e => { f(e.target); saveLY(); applyLayers(); });
+  on("lyBase", "change", t => LY.base = t.value);
+  on("lyHills", "change", t => LY.hills = t.checked); on("lyHillK", "input", t => { LY.hillK = +t.value; LY.hills = true; q("lyHills").checked = true; });
+  on("lyNames", "change", t => LY.names = t.checked); on("lyNameLvl", "change", t => { LY.nameLvl = +t.value; LY.names = true; q("lyNames").checked = true; });
+  on("lyLabels", "change", t => LY.labels = t.checked);
+  on("lyLines", "change", t => LY.lines = t.checked); on("lyLineK", "input", t => { LY.lineK = +t.value; LY.lines = true; q("lyLines").checked = true; });
+  on("lyColour", "input", t => LY.colour = +t.value);
+  q("lyReset").onclick = () => { Object.assign(LY, LYDEF); saveLY(); sync(); applyLayers(); };
+  sync();
+}
+function applyLayers() {
+  if (!lmap) return;
+  if (tileBase) { tileBase.remove(); tileBase = null; }
+  if (LY.base !== "none") tileBase = L.tileLayer(TILE[LY.base], { maxZoom: 16, attribution: "Tiles © Esri" }).addTo(lmap);
+  if (LY.hills) { tileHill.addTo(lmap); tileHill.setOpacity(LY.hillK / 100); } else tileHill.remove();
+  if (vcL) vcL.setStyle(styleOf);
+  labels(); placeNames();
+}
+function boxFree(boxes, bx) { return !boxes.some(o => bx[0] < o[2] && bx[2] > o[0] && bx[1] < o[3] && bx[3] > o[1]); }
+let LBOX = [];
+function labels() {
+  if (!lmap || !GEO) return;
+  labL.clearLayers(); LBOX = [];
+  if (!LY.labels || !(S.mode === "sig" || S.mode === "sp" || S.mode === "new")) { placeNames(); return; }
+  const z = lmap.getZoom(), bb = lmap.getBounds();
+  const items = [];
+  for (const f of GEO.features) {
+    const p = f.properties, ci = CBY[p.id]; if (ci == null) continue;
+    let t = null, sub = "", pri = 0;
+    if (S.mode === "sig") { const s = sigOf(C[ci], S.g); if (!s) continue; t = s.sp; sub = fq(s.lq) + "×"; pri = s.lq; }
+    else if (S.mode === "sp") { if (!SPV || S.sp == null) continue; const st = spStat(ci); if (st.lq < 2 || !st.n) continue; t = C[ci].name; sub = fq(st.lq) + "×"; pri = st.lq; }
+    else { const fi = newFirst(ci); if (fi < 0) continue; t = C[ci].name; sub = PG.periods[fi]; pri = 5 - fi; }
+    if (!bb.contains([p.lat, p.lon])) continue;
+    items.push({ t, sub, pri: pri + (ci === S.sel ? 1e6 : 0), lat: p.lat, lon: p.lon });
+  }
+  items.sort((a, b) => b.pri - a.pri);
+  const lim = (S.mode === "sig" ? 1 : .5) * (z < 5.5 ? 22 : z < 6.5 ? 45 : 200);
+  for (const it of items) {
+    const pt = lmap.latLngToContainerPoint([it.lat, it.lon]), w = Math.max(it.t.length * 6.6, 34);
+    const bx = [pt.x - w / 2 - 3, pt.y - 11, pt.x + w / 2 + 3, pt.y + 21];
+    if (!boxFree(LBOX, bx)) continue;
+    LBOX.push(bx);
+    L.marker([it.lat, it.lon], { pane: "labels", interactive: false, keyboard: false, icon: L.divIcon({ className: "splab", html: `${esc(it.t)}<small>${esc(it.sub)}</small>`, iconSize: [w, 26], iconAnchor: [w / 2, 9] }) }).addTo(labL);
+    if (LBOX.length >= lim) break;
+  }
+  placeNames();
+}
+function placeNames() {
+  if (!lmap || !nameL) return;
+  nameL.clearLayers(); if (!LY.names || !PLACES.length) return;
+  const z = lmap.getZoom(), bb = lmap.getBounds().pad(.05), lvl = LY.nameLvl;
+  const minR = lvl === 0 ? (z >= 7 ? 3 : 4) : lvl === 1 ? (z >= 9 ? 1 : z >= 7.5 ? 2 : z >= 6 ? 3 : 4) : (z >= 10 ? 0 : z >= 8.5 ? 1 : z >= 7 ? 2 : 3);
+  const boxes = LBOX.slice(); let k = 0;
+  for (const p of PLACES) {
+    if (p[3] < minR || !bb.contains([p[1], p[2]])) continue;
+    const pt = lmap.latLngToContainerPoint([p[1], p[2]]), bx = [pt.x - 4, pt.y - 8, pt.x + 10 + p[0].length * 6.6, pt.y + 7];
+    if (!boxFree(boxes, bx)) continue;
+    boxes.push(bx);
+    L.marker([p[1], p[2]], { pane: "labels", interactive: false, keyboard: false, icon: L.divIcon({ className: "city" + (p[3] <= 1 ? " r" + p[3] : ""), html: `<i></i>${esc(p[0])}`, iconSize: null, iconAnchor: [3, 6] }) }).addTo(nameL);
+    if (++k > 260) break;
+  }
+}
+/* point in polygon, for "where am I" and place search */
+function inRing(x, y, r) { let o = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) o = !o; } return o; }
+function countyAt(lat, lon) {
+  if (!GEO) return -1;
+  for (const f of GEO.features) { const g = f.geometry, polys = g.type === "Polygon" ? [g.coordinates] : g.coordinates;
+    for (const pl of polys) if (inRing(lon, lat, pl[0]) && !pl.slice(1).some(h => inRing(lon, lat, h))) return CBY[f.properties.id]; }
+  return -1;
+}
+function nearestPlace(lat, lon, minR = 0) { let b = null, bd = 1e9; const k = Math.cos(lat * Math.PI / 180); for (const p of PLACES) { if (p[3] < minR) continue; const d = ((p[1] - lat) ** 2 + ((p[2] - lon) * k) ** 2); if (d < bd) { bd = d; b = p; } } return b ? [b[0], Math.sqrt(bd) * 111] : null; }
+function where() {
+  const d = document.getElementById("where"); if (!d || !lmap || !GEO) return;
+  const c = lmap.getCenter(), ci = countyAt(c.lat, c.lng), z = lmap.getZoom();
+  if (z < 6.5) { d.style.display = "none"; return; }
+  d.style.display = "";
+  const np = nearestPlace(c.lat, c.lng, z >= 9 ? 0 : 1);
+  d.innerHTML = `<span>Map centre:</span> ${np ? (np[1] < 2 ? "" : Math.round(np[1]) + " km from ") + esc(np[0]) : ""}${ci >= 0 ? "<br>" + esc(C[ci].name) : "<br><span>at sea</span>"}`;
+}
+
+/* ===== controls ===== */
+const grpSeg = document.getElementById("grpSeg");
+grpSeg.innerHTML = [["animals", "All animals", null], ...PG.groups.map(g => [g[0], SHORT[g[0]], g[2]])].map(([k, l, c]) => `<button class="btn" data-g="${k}" aria-pressed="${k === S.g}">${c ? `<i style="background:${c}"></i>` : ""}${l}</button>`).join("");
+grpSeg.onclick = e => { const b = e.target.closest("button"); if (!b) return; S.g = b.dataset.g; grpSeg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); restyle(); };
+const modeSeg = document.getElementById("modeSeg");
+modeSeg.onclick = e => { const b = e.target.closest("button"); if (!b) return; setMode(b.dataset.m); };
+function setMode(m) {
+  S.mode = m; modeSeg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.m === m));
+  document.getElementById("grpRow").style.display = (m === "sig" || m === "dist") ? "" : "none";
+  document.getElementById("spRow").style.display = (m === "sp" || m === "new") ? "" : "none";
+  document.getElementById("newSel").style.display = m === "new" ? "" : "none";
+  document.getElementById("spChip").style.display = m === "sp" ? "" : "none";
+  if (m === "sp") { loadSpecies().then(() => { if (S.sp == null) S.sp = SPI.get("chough") ?? 0; chip(); restyle(); }); return; }
+  restyle();
+}
+const newSel = document.getElementById("newSel");
+newSel.innerHTML = PG.newcomers.map((n, k) => `<option value="${k}">${esc(n[0])} (${esc(n[2])})</option>`).join("");
+newSel.onchange = () => { S.nc = +newSel.value; restyle(); };
+function chip() { const s = SPV[S.sp]; document.getElementById("spChip").innerHTML = `<span class="chip">${esc(s[0])} <i style="font-style:italic;opacity:.8">${esc(s[1])}</i></span> <span style="font:400 12px var(--mono);color:var(--muted)">${esc(GL[GK[s[2]]])}, ${fmt(s[3])} records in all. Search to change.</span>`; }
+function scrollMap() { const m = document.getElementById("lmap"), r = m.getBoundingClientRect(); if (r.top < 0 || r.bottom > innerHeight) m.scrollIntoView({ behavior: "smooth", block: innerWidth < 900 ? "start" : "center" }); }
+function select(ci, fly = true) {
+  S.sel = ci; restyle();
+  if (fly && vcL) vcL.eachLayer(l => { if (CBY[l.feature.properties.id] === ci) lmap.flyToBounds(l.getBounds(), { maxZoom: 8, duration: .6, padding: [30, 30] }); });
+}
+function pickSpecies(k) { S.sp = k; setMode("sp"); chip(); restyle(); scrollMap(); }
+
+/* ===== legend and info ===== */
+function legend() {
+  const box = document.getElementById("legend"), h = document.getElementById("legH");
+  if (S.mode === "sig") {
+    h.textContent = S.g === "animals" ? "Signature animal, by group" : "Signature " + GL[S.g].toLowerCase();
+    const gs = S.g === "animals" ? ANIMALS : [S.g];
+    box.innerHTML = `<div class="gl">${gs.map(g => `<div><span class="sw" style="background:${GC[g]}"></span>${esc(SHORT[g])}</div>`).join("")}</div>
+<div class="ramp" style="background:linear-gradient(90deg,${mix(BGH(), GC[gs[0]], .22)},${GC[gs[0]]})"></div><div class="ends"><span>2× over-represented</span><span>300×</span></div>
+<div style="margin-top:4px"><span class="sw" style="background:${css("--few")}"></span>too few records</div>`;
+  } else if (S.mode === "dist") {
+    h.textContent = "How distinctive: " + (S.g === "animals" ? "all animals" : GL[S.g].toLowerCase());
+    box.innerHTML = `<div class="ramp" style="background:linear-gradient(90deg,${RAMP.dist.join(",")})"></div><div class="ends"><span>like the UK (0.1)</span><span>unlike it (0.65)</span></div><div style="margin-top:4px"><span class="sw" style="background:${css("--few")}"></span>too few records</div>`;
+  } else if (S.mode === "eff") {
+    h.textContent = "Open records per km² since 2000";
+    box.innerHTML = `<div class="ramp" style="background:linear-gradient(90deg,${RAMP.eff.join(",")})"></div><div class="ends"><span>25</span><span>100</span><span>1,000</span></div>`;
+  } else if (S.mode === "sp") {
+    const g = SPV && S.sp != null ? GK[SPV[S.sp][2]] : "birds";
+    h.textContent = "Share of the county's " + (GL[g] || "").toLowerCase() + " records, against the UK";
+    box.innerHTML = `<div class="ramp" style="background:linear-gradient(90deg,${mix(BGH(), isDark() ? "#5B6B78" : "#8FA3B3", .8)},${BGH()},${GC[g]})"></div><div class="ends"><span>16× under</span><span>same</span><span>32× over</span></div>
+<div style="margin-top:4px"><span class="sw" style="background:${css("--none")}"></span>no records since 2000 &nbsp; <span class="sw" style="background:${css("--few")}"></span>too few records of the group</div>`;
+  } else {
+    h.textContent = "First period with 2 or more records";
+    box.innerHTML = `<div class="gl">${PG.periods.map((p, k) => `<div><span class="sw" style="background:${ramp("new", k / 4)}"></span>${p}</div>`).join("")}<div><span class="sw" style="background:${css("--none")}"></span>not yet</div></div>`;
+  }
+}
+function barsHTML(rows, col) {
+  const mx = Math.max(...rows.map(r => Math.log10(Math.max(r[3], 1))), .3);
+  return `<div class="bars">${rows.map(r => `<div class="bar" data-sp="${esc(r[0])}" title="Map ${esc(r[0])}"><span class="t">${esc(r[0])} <span style="color:var(--muted)">${fmt(r[2])}</span></span><span class="v">${fq(r[3])}×</span><span class="k"><b style="width:${Math.max(3, Math.log10(Math.max(r[3], 1)) / mx * 100)}%;background:${col}"></b></span></div>`).join("")}</div>`;
+}
+function info() {
+  const box = document.getElementById("info");
+  if (S.sel == null) { box.innerHTML = S.mode === "sp" ? "Tap a county to see this species there." : "Tap a county on the map, or search for a place."; return; }
+  const c = C[S.sel], gi = S.g === "animals" ? null : GK.indexOf(S.g);
+  let h = `<div class="cn">${esc(c.name)}</div><div class="meta">${esc(c.id.replace("VC", "VC "))} · ${esc(c.nation)} · ${fmt(c.area)} km² · ${fmt(c.rec)} open records since 2000 (${fmt(c.rec / c.area)} per km²) from ${fmt(c.nds)} datasets</div>`;
+  if (S.mode === "sp" && SPV && S.sp != null) {
+    const t = spStat(S.sel), s = SPV[S.sp];
+    h += `<div class="sig">${esc(s[0])} <em>${esc(s[1])}</em></div><p style="margin:4px 0 10px">${t.n ? `${fmt(t.n)} records, ${(100 * t.n / t.gc).toFixed(t.n / t.gc < .01 ? 2 : 1)}% of the county's ${fmt(t.gc)} ${esc(GL[t.g].toLowerCase())} records: <b>${fq(t.lq)}×</b> its UK share.` : `No open records since 2000 among the county's ${fmt(t.gc)} ${esc(GL[t.g].toLowerCase())} records.`}${t.few ? " Few records of this group here, so treat with care." : ""}</p>`;
+  }
+  if (S.mode === "new") { const nc = PG.newcomers[S.nc], f = newFirst(S.sel); h += `<div class="sig">${esc(nc[0])}</div><p style="margin:4px 0 10px">${f < 0 ? "Fewer than two open records in any period." : "First period with two or more open records: <b>" + PG.periods[f] + "</b>."}</p>`; }
+  const gsShow = S.g === "animals" || S.mode !== "sig" && S.mode !== "dist" ? ANIMALS.concat(["plants"]) : [S.g];
+  if (S.g === "animals" && c.animal && (S.mode === "sig" || S.mode === "dist")) h += `<div class="meta" style="margin:0">Signature animal</div><div class="sig">${esc(c.animal[0])} <em>${esc(c.animal[1])}</em></div><div style="margin-bottom:8px">${fq(c.animal[3])}× its UK share of ${esc(GL[c.animal[5]].toLowerCase())} records (${fmt(c.animal[2])} records)</div>`;
+  for (const g of gsShow) {
+    const rows = c.top[g]; const k = GK.indexOf(g);
+    if (!rows || !rows.length) { if (gsShow.length === 1) h += `<p>Too few ${esc(GL[g].toLowerCase())} records here (${fmt(c.gc[k])}) to rank.</p>`; continue; }
+    h += `<div class="meta" style="margin:6px 0 0;color:var(--fg);font-weight:500"><span class="sw" style="display:inline-block;width:10px;height:10px;background:${GC[g]};margin-right:6px"></span>${esc(GL[g])}: ${fmt(c.gc[k])} records, ${fmt(c.gs[k])} species${c.dist[k] != null ? ", distinctiveness " + c.dist[k].toFixed(2) : ""}</div>` + barsHTML(gsShow.length === 1 ? rows : rows.slice(0, 3), GC[g]);
+  }
+  if (c.only.length) h += `<div class="meta" style="margin:8px 0 0;color:var(--fg);font-weight:500">Recorded only here (${c.n_only})</div><ul>${c.only.slice(0, 5).map(o => `<li>${esc(o[0])} <span style="color:var(--muted)">${esc(SHORT[GK[o[2]]])}, ${fmt(o[3])}</span></li>`).join("")}</ul>`;
+  h += `<div class="meta" style="margin-top:8px">Largest datasets: ${c.ds.map(d => esc(d[0].length > 70 ? d[0].slice(0, 68) + "…" : d[0]) + " (" + fmt(d[1]) + ")").join("; ")}</div>`;
+  box.innerHTML = h;
+  box.querySelectorAll(".bar").forEach(b => b.onclick = () => loadSpecies().then(() => { const k = SPI.get(b.dataset.sp.toLowerCase()); if (k != null) pickSpecies(k); }));
+}
+
+/* ===== search ===== */
+const qi = document.getElementById("q"), sug = document.getElementById("sug");
+let sugItems = [], sugIdx = -1;
+qi.addEventListener("focus", () => loadSpecies());
+function showSug(items) { sugItems = items; sugIdx = -1; sug.innerHTML = items.map((p, k) => `<li role="option" data-k="${k}">${esc(p.label)} <span>${esc(p.sub)}</span></li>`).join(""); sug.style.display = items.length ? "block" : "none"; qi.setAttribute("aria-expanded", items.length > 0); }
+qi.addEventListener("input", () => {
+  const v = qi.value.trim().toLowerCase(); if (v.length < 2) { showSug([]); return; }
+  const out = [];
+  C.forEach((c, i) => { if (c.name.toLowerCase().includes(v)) out.push({ label: c.name, sub: "vice county", t: "c", i }); });
+  if (SPV) for (let k = 0; k < SPV.length && out.length < 16; k++) { const s = SPV[k]; if (s[0].toLowerCase().includes(v) || s[1].toLowerCase().includes(v)) out.push({ label: s[0], sub: s[1] + ", " + SHORT[GK[s[2]]], t: "s", i: k, st: s[0].toLowerCase().startsWith(v) }); }
+  for (const p of PLACES) { if (out.length > 22) break; if (p[0].toLowerCase().startsWith(v)) out.push({ label: p[0], sub: "place", t: "p", p }); }
+  out.sort((a, b) => (b.t === "c") - (a.t === "c") || (b.st ? 1 : 0) - (a.st ? 1 : 0));
+  showSug(out.slice(0, 14));
+});
+qi.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); sugIdx = Math.max(0, Math.min(sugItems.length - 1, sugIdx + (e.key === "ArrowDown" ? 1 : -1))); sug.querySelectorAll("li").forEach((l, k) => l.setAttribute("aria-selected", k === sugIdx)); }
+  if (e.key === "Enter" && sugItems.length) { e.preventDefault(); go(sugItems[Math.max(0, sugIdx)]); }
+  if (e.key === "Escape") showSug([]);
+});
+sug.addEventListener("click", e => { const li = e.target.closest("li"); if (li) go(sugItems[+li.dataset.k]); });
+function go(it) {
+  showSug([]); qi.value = it.label; qi.blur();
+  if (it.t === "s") { pickSpecies(it.i); return; }
+  if (it.t === "c") { select(it.i, true); scrollMap(); return; }
+  const ci = countyAt(it.p[1], it.p[2]); S.sel = ci >= 0 ? ci : S.sel; restyle();
+  lmap.flyTo([it.p[1], it.p[2]], 9, { duration: .6 }); scrollMap();
+}
+
+/* ===== cards ===== */
+const CARDS = [["Mid Ebudes", "birds", "Corncrake"], ["Pembrokeshire", "birds", "Manx Shearwater"], ["Moray", "birds", "Crested Tit"], ["East Norfolk", "butterflies", "Swallowtail"], ["West Inverness-shire", "butterflies", "Chequered Skipper"], ["Caernarvonshire", "birds", "Chough"], ["Huntingdonshire", "mammals", "Chinese Water Deer"], ["South Devon", "birds", "Cirl Bunting"]];
+document.getElementById("cards").innerHTML = CARDS.map(([cn, g]) => { const ci = C.findIndex(c => c.name === cn); const t = C[ci].top[g][0]; return `<button class="card" data-ci="${ci}" data-g="${g}" style="border-left-color:${GC[g]}"><b>${esc(t[0])}</b><span style="color:var(--muted)">${esc(cn)}</span><div class="big">${fq(t[3])}× <span>its UK share of ${esc(GL[g].toLowerCase())} records</span></div>${fmt(t[2])} records since 2000</button>`; }).join("");
+document.getElementById("cards").onclick = e => { const b = e.target.closest(".card"); if (!b) return; S.g = b.dataset.g; grpSeg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.g === S.g)); setMode("sig"); select(+b.dataset.ci, true); scrollMap(); };
+
+/* ===== charts ===== */
+function chGroups() {
+  resp(document.getElementById("chGroups"), (w) => {
+    const cnt = {}; for (const c of C) if (c.animal) cnt[c.animal[5]] = (cnt[c.animal[5]] || 0) + 1;
+    const rows = ANIMALS.map(g => [g, cnt[g] || 0]).sort((a, b) => b[1] - a[1]);
+    const lw = w < 560 ? 130 : 190, h = rows.length * 34 + 10, s = el("svg", { viewBox: `0 0 ${w} ${h}` }), mx = Math.max(...rows.map(r => r[1]));
+    rows.forEach(([g, n], k) => { const y = k * 34 + 4; el("text", { x: lw - 8, y: y + 19, "text-anchor": "end", class: "lab" }, s).textContent = GL[g];
+      const bw = (w - lw - 44) * n / mx; const r = el("rect", { x: lw, y, width: bw, height: 24, fill: GC[g] }, s); hover(r, `<b>${esc(GL[g])}</b><br>${n} vice counties`);
+      el("text", { x: lw + bw + 6, y: y + 18, class: "lab b" }, s).textContent = n; });
+    document.getElementById("chGroups").appendChild(s);
+  });
+}
+function strip(id, val, fmtv, logx, lo, hi, ticks) {
+  resp(document.getElementById(id), (w, sm) => {
+    const nations = ["Scotland", "Northern Ireland", "Isle of Man", "Wales", "England"], lw = sm ? 92 : 130, rh = 44, h = nations.length * rh + 30;
+    const s = el("svg", { viewBox: `0 0 ${w} ${h}` });
+    const X = v => lw + (logx ? (Math.log10(v) - Math.log10(lo)) / (Math.log10(hi) - Math.log10(lo)) : (v - lo) / (hi - lo)) * (w - lw - 14);
+    ticks.forEach(t => { el("line", { x1: X(t), x2: X(t), y1: 4, y2: h - 22, stroke: css("--rule") }, s); el("text", { x: X(t), y: h - 6, "text-anchor": "middle", class: "lab s m" }, s).textContent = fmtv(t); });
+    nations.forEach((n, k) => { const y = k * rh + 24; el("text", { x: lw - 10, y: y + 4, "text-anchor": "end", class: "lab" }, s).textContent = sm && n === "Northern Ireland" ? "N. Ireland" : n;
+      C.forEach((c, i) => { if (c.nation !== n) return; const v = val(c); if (v == null) return; const jit = ((i * 37) % 11 - 5) * 2.2;
+        const d = el("circle", { cx: X(Math.max(lo, Math.min(hi, v))), cy: y + jit, r: 5.5, fill: css("--moss"), "fill-opacity": .55, stroke: css("--fg"), "stroke-width": .6 }, s);
+        hover(d, `<b>${esc(c.name)}</b><br>${fmtv(v)}`); d.addEventListener("click", () => { select(i, true); scrollMap(); }); });
+    });
+    document.getElementById(id).appendChild(s);
+  });
+}
+function chNew() {
+  resp(document.getElementById("chNew"), (w, sm) => {
+    const cols = w < 520 ? 2 : w < 900 ? 3 : 5, cw = w / cols, ch = 120, rows = Math.ceil(PG.newcomers.length / cols), s = el("svg", { viewBox: `0 0 ${w} ${rows * (ch + 26)}` });
+    PG.newcomers.forEach((nc, k) => { const x0 = (k % cols) * cw, y0 = Math.floor(k / cols) * (ch + 26);
+      const g = el("g", {}, s); const mxc = Math.floor((cw - 30) / 7); el("text", { x: x0 + 4, y: y0 + 14, class: "lab b" }, g).textContent = nc[0].length > mxc ? nc[0].slice(0, mxc - 1) + "…" : nc[0];
+      const bw = (cw - 18) / 5;
+      nc[3].forEach((v, j) => { const bh = v / {{counties}} * (ch - 44); const r = el("rect", { x: x0 + 4 + j * bw, y: y0 + ch - 14 - bh, width: bw - 3, height: bh, fill: ramp("new", j / 4) }, g); hover(r, `<b>${esc(nc[0])}</b><br>${PG.periods[j]}: ${v} vice counties`); });
+      el("line", { x1: x0 + 4, x2: x0 + cw - 12, y1: y0 + ch - 14, y2: y0 + ch - 14, stroke: css("--fg") }, g);
+      el("text", { x: x0 + 4, y: y0 + ch, class: "lab s m" }, g).textContent = "1970s"; el("text", { x: x0 + cw - 12, y: y0 + ch, "text-anchor": "end", class: "lab s m" }, g).textContent = "2020s";
+      el("text", { x: x0 + cw - 12, y: y0 + 30, "text-anchor": "end", class: "lab s" }, g).textContent = nc[3][4];
+      g.style.cursor = "pointer"; g.addEventListener("click", () => { S.nc = k; newSel.value = k; setMode("new"); scrollMap(); });
+    });
+    document.getElementById("chNew").appendChild(s);
+  });
+}
+function onlyTable() {
+  const rows = [];
+  C.forEach((c, i) => c.only.forEach(o => { if (!["plants", "moths"].includes(GK[o[2]])) rows.push([o, c, i]); }));
+  rows.sort((a, b) => b[0][3] - a[0][3]);
+  document.getElementById("onlyT").innerHTML = `<thead><tr><th>Species</th><th>Vice county</th><th class="num">Records</th></tr></thead><tbody>${rows.map(([o, c, i]) => `<tr class="go" data-ci="${i}"><td>${esc(o[0])}<small><i>${esc(o[1])}</i>, ${esc(SHORT[GK[o[2]]].toLowerCase())}</small></td><td>${esc(c.name)}</td><td class="num">${fmt(o[3])}</td></tr>`).join("")}</tbody>`;
+  document.getElementById("onlyT").onclick = e => { const tr = e.target.closest("tr.go"); if (tr) { select(+tr.dataset.ci, true); scrollMap(); } };
+}
+
+/* ===== theme ===== */
+document.getElementById("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = isDark() ? "light" : "dark"; if (LY.base !== "none") { LY.base = isDark() ? "dark" : "light"; const s = document.getElementById("lyBase"); if (s) s.value = LY.base; } applyLayers(); restyle(); redraws.forEach(f => f()); };
+if (isDark() && LY.base === "light") LY.base = "dark";
+
+initMap(); legend(); info(); chGroups(); chNew(); onlyTable();
+strip("chDist", c => distOf(c, "animals"), v => v.toFixed(2), false, .1, .7, [.1, .2, .3, .4, .5, .6, .7]);
+strip("chEff", c => c.rec / c.area, v => fmt(v), true, 30, 1000, [30, 100, 300, 1000]);
+</script>
+</body>
+</html>
