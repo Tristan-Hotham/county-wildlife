@@ -1,0 +1,112 @@
+vc_id,vice_county,group,species,scientific,records
+VC1,West Cornwall,moths,Western Grass-miner,Elachista dispunctella,6
+VC1,West Cornwall,plants,Twin-headed Clover,Trifolium bocconei,21
+VC1,West Cornwall,plants,Rough-fruited Buttercup,Ranunculus muricatus,15
+VC1,West Cornwall,plants,Aeonium,Aeonium cuneatum,9
+VC1,West Cornwall,plants,Chasmanthe,Chasmanthe bicolor,9
+VC1,West Cornwall,plants,Shrub Goldilocks,Chrysocoma coma-aurea,9
+VC1,West Cornwall,plants,Tree Bedstraw,Coprosma repens,9
+VC1,West Cornwall,plants,Orange Bird's-foot,Ornithopus pinnatus,7
+VC1,West Cornwall,plants,Deltiod-Leaved Dew-Plant,Oscularia deltoides,6
+VC1,West Cornwall,plants,Woad-leaved Ragwort,Senecio glastifolius,6
+VC1,West Cornwall,plants,Sally-my-handsome,Carpobrotus acinaciformis,5
+VC1,West Cornwall,plants,Red Corn-lily,Ixia campanulata,5
+VC1,West Cornwall,plants,Tubular Corn-lily,Ixia paniculata,5
+VC1,West Cornwall,plants,Limonium loganicum,Limonium loganicum,5
+VC4,North Devon,plants,Lundy Cabbage,Coincya wrightii,12
+VC4,North Devon,plants,Sorbus admonitor,Sorbus admonitor,7
+VC6,North Somerset,herps,Perez's Frog,Pelophylax perezi,6
+VC6,North Somerset,plants,Somerset Hair-grass,Koeleria vallesiana,59
+VC6,North Somerset,plants,Cheddar Pink,Dianthus gratianopolitanus,37
+VC6,North Somerset,plants,Sorbus cheddarensis,Sorbus cheddarensis,6
+VC6,North Somerset,plants,Sorbus eminentoides,Sorbus eminentoides,5
+VC8,South Wiltshire,birds,Red-billed Leiothrix,Leiothrix lutea,8
+VC9,Dorset,birds,Lesser Whistling Duck,Dendrocygna javanica,5
+VC9,Dorset,moths,Echium Stilt,Dialectica scalariella,5
+VC9,Dorset,moths,Silvery Gem,Eucarta virgo,5
+VC9,Dorset,plants,Limonium dodartiforme,Limonium dodartiforme,16
+VC10,Isle of Wight,moths,Isle of Wight Wave,Idaea humiliata,33
+VC13,West Sussex,mammals,Mouse-eared Bat,Myotis myotis,58
+VC13,West Sussex,plants,Starry Clover,Trifolium stellatum,51
+VC14,East Sussex,moths,Lewes Wave,Scopula immorata,33
+VC14,East Sussex,plants,Loose-Flowered Orchid,Anacamptis laxiflora,5
+VC15,East Kent,moths,Clay Fan-foot,Paracolax tristalis,12
+VC15,East Kent,moths,Black-veined Moth,Siona lineata,11
+VC15,East Kent,moths,Sub-angled Wave,Scopula nigropunctata,7
+VC15,East Kent,moths,Water-dock Case-bearer,Coleophora hydrolapathella,5
+VC15,East Kent,plants,Late Spider-orchid,Ophrys fuciflora,8
+VC15,East Kent,plants,Bedstraw Broomrape,Orobanche caryophyllacea,8
+VC17,Surrey,moths,Surrey Midget,Phyllonorycter scabiosella,24
+VC17,Surrey,plants,Oxalis conorrhiza,Oxalis conorrhiza,5
+VC18,South Essex,plants,Hartwort,Tordylium maximum,8
+VC19,North Essex,moths,Fisher's Estuarine Moth,Gortyna borelii,15
+VC19,North Essex,moths,Tare Case-bearer,Coleophora amethystinella,6
+VC19,North Essex,plants,Narrow-Leaved Cudweed,Logfia gallica,5
+VC20,Hertfordshire,moths,Angoumois Grain Moth,Sitotroga cerealella,9
+VC20,Hertfordshire,plants,Carex cespitosa,Carex cespitosa,6
+VC22,Berkshire,moths,Rufous Pearl,Udea fulvalis,241
+VC22,Berkshire,moths,Oak Rustic,Dryobota labecula,24
+VC22,Berkshire,moths,Beautiful Juniper Piercer,Cydia interscindana,16
+VC22,Berkshire,moths,Jersey Mocha,Cyclophora ruficiliaria,12
+VC22,Berkshire,moths,Dusky Clearwing,Paranthrene tabaniformis,10
+VC22,Berkshire,moths,Mugwort Tortrix,Eucosma metzneriana,9
+VC22,Berkshire,moths,Sainfoin Piercer,Grapholita caecana,9
+VC22,Berkshire,moths,Southern Chestnut,Anchoscelis haematidea,8
+VC22,Berkshire,moths,Corn Moth,Nemapogon granella,6
+VC22,Berkshire,moths,Spiny Hook-tip,Watsonalla uncinula,6
+VC22,Berkshire,plants,Ceratostigma willmottianum,Ceratostigma willmottianum,37
+VC22,Berkshire,plants,Paeonia delavayi,Paeonia delavayi,19
+VC22,Berkshire,plants,Pineapple Broom,Cytisus battandieri,8
+VC22,Berkshire,plants,Indian-shot,Canna indica,6
+VC24,Buckinghamshire,moths,Downland Plume,Oxyptilus pilosellae,6
+VC25,East Suffolk,dragonflies,Large White-faced Darter,Leucorrhinia pectoralis,6
+VC25,East Suffolk,moths,Monk Moth,Monopis monachella,69
+VC25,East Suffolk,plants,Suffolk Lungwort,Pulmonaria obscura,7
+VC26,West Suffolk,plants,Breckland Birthwort,Aristolochia hirta,9
+VC27,East Norfolk,moths,Small Dotted Footman,Pelosia obtusa,14
+VC29,Cambridgeshire,moths,Fen Hook-wing,Ancylis paludana,21
+VC29,Cambridgeshire,moths,Fen Tortrix,Acleris shepherdana,6
+VC29,Cambridgeshire,moths,Imperial Stilt,Dialectica imperialella,6
+VC31,Huntingdonshire,plants,Fen Wood-rush,Luzula pallescens,11
+VC34,West Gloucestershire,birds,Magpie Goose,Anseranas semipalmata,5
+VC35,Monmouthshire,moths,Scarce Hook-tip,Sabra harpagula,48
+VC35,Monmouthshire,moths,Lime Knot-horn,Salebriopsis albicilla,10
+VC37,Worcestershire,plants,Silene catholica,Silene catholica,7
+VC40,Shropshire,moths,Buff-headed Mompha,Mompha lacteella,6
+VC40,Shropshire,moths,Sandy Case-bearer,Coleophora lithargyrinella,5
+VC40,Shropshire,moths,Strawberry Dot,Ectoedemia arcuatella,5
+VC42,Breconshire,plants,Least Whitebeam,Sorbus minima,49
+VC47,Montgomeryshire,plants,Stirton's Whitebeam,Sorbus stirtoniana,6
+VC49,Caernarvonshire,plants,Snowdon Lily,Gagea serotina,7
+VC49,Caernarvonshire,plants,Welsh eyebright,Euphrasia cambrica,5
+VC54,North Lincolnshire,moths,Marsh Moth,Athetis pallustris,6
+VC55,Leicestershire,moths,Saxifrage Plume,Stenoptilia millieridactyla,8
+VC55,Leicestershire,moths,Scarce Thorn Case-bearer,Coleophora trigeminella,5
+VC55,Leicestershire,moths,Pimpinel Brown,Depressaria pimpinellae,5
+VC55,Leicestershire,moths,Maple Piercer,Pammene trauniana,5
+VC61,South-east Yorkshire,birds,Black-browed Albatross,Thalassarche melanophris,7
+VC62,North-east Yorkshire,plants,Coastal Gumplant,Grindelia stricta,7
+VC67,South Northumberland,plants,Alchemilla micans,Alchemilla micans,11
+VC68,North Northumberland,plants,Lindisfarne Helleborine,Epipactis sancta,45
+VC69,Westmorland,plants,Leafless Hawk's-beard,Crepis praemorsa,6
+VC69,Westmorland,plants,Myosotis stricta,Myosotis stricta,5
+VC73,Kirkcudbrightshire,birds,Laughing Kookaburra,Dacelo novaeguineae,5
+VC79,Selkirkshire,plants,Alchemilla tytthantha,Alchemilla tytthantha,7
+VC88,Mid Perthshire,moths,Mountain Plume,Stenoptilia islandicus,7
+VC88,Mid Perthshire,plants,Bristle Sedge,Carex microglochin,142
+VC88,Mid Perthshire,plants,Snow Pearlwort,Sagina nivalis,113
+VC90,Angus,plants,Purple Colt's-foot,Homogyne alpina,5
+VC95,Moray,moths,Small Dark Yellow Underwing,Coranarta cordigera,11
+VC100,Clyde Isles,plants,Arran Service-tree,Sorbus pseudofennica,9
+VC100,Clyde Isles,plants,False Rowan,Sorbus pseudomeinichii,6
+VC103,Mid Ebudes,moths,Slender Scotch Burnet,Zygaena loti,96
+VC107,East Sutherland,plants,Allium giganteum,Allium giganteum,6
+VC109,Caithness,plants,Scottish Small-reed,Calamagrostis scotica,5
+VC110,Outer Hebrides,moths,Northern Scalloped Tortrix,Acleris effractana,124
+VC110,Outer Hebrides,moths,Grey Hook-wing,Ancylis subarcuana,21
+VC110,Outer Hebrides,plants,an Eyebright,Euphrasia campbelliae,14
+VC111,Orkney,birds,Veery,Catharus fuscescens,9
+VC112,Shetland,plants,Salix hookeriana,Salix hookeriana,7
+VC112,Shetland,plants,Tussac-grass,Poa flabellata,5
+H33,Fermanagh,plants,Dense-flowered Orchid,Neotinea maculata,78
+H40,Londonderry,moths,Scarce Crimson & Gold,Pyrausta sanguinalis,9

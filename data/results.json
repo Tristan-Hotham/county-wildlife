@@ -1,0 +1,5690 @@
+{
+ "meta": {
+  "retrieved": "2026-10-29",
+  "counties": 118,
+  "gb_vcs": 112,
+  "ni_vcs": 6,
+  "records_open": 65088580,
+  "records_cc_by": 33444849,
+  "records_ogl": 29897336,
+  "records_cc0": 1746395,
+  "records_in_vcs": 60917118,
+  "species_in_vcs": 36799,
+  "species_picker": 2740,
+  "excluded_domestic_taxa": 9,
+  "min_sp_vc": 20,
+  "min_sp_uk": 200,
+  "min_group_vc": 1000,
+  "min_group_vc_small": 150,
+  "ci": 0.9,
+  "only_min": 5,
+  "period_totals": {
+   "1970-1989": {
+    "total": 16271314,
+    "n_cl254": 113
+   },
+   "1990-1999": {
+    "total": 7900893,
+    "n_cl254": 113
+   },
+   "2000-2009": {
+    "total": 20675641,
+    "n_cl254": 113
+   },
+   "2010-2019": {
+    "total": 32286036,
+    "n_cl254": 113
+   },
+   "2020-2026": {
+    "total": 16396457,
+    "n_cl254": 113
+   }
+  }
+ },
+ "groups": {
+  "birds": {
+   "records": 20946173,
+   "species": 589,
+   "counties_shown": 118
+  },
+  "mammals": {
+   "records": 1577199,
+   "species": 92,
+   "counties_shown": 118
+  },
+  "herps": {
+   "records": 176985,
+   "species": 44,
+   "counties_shown": 108
+  },
+  "butterflies": {
+   "records": 9083320,
+   "species": 68,
+   "counties_shown": 111
+  },
+  "moths": {
+   "records": 1278713,
+   "species": 2111,
+   "counties_shown": 60
+  },
+  "dragonflies": {
+   "records": 1786875,
+   "species": 58,
+   "counties_shown": 116
+  },
+  "plants": {
+   "records": 16419485,
+   "species": 3318,
+   "counties_shown": 118
+  }
+ },
+ "effort": {
+  "most_per_km2": [
+   [
+    "Middlesex",
+    888.6
+   ],
+   [
+    "Surrey",
+    831.1
+   ],
+   [
+    "Berkshire",
+    820.1
+   ],
+   [
+    "South Hampshire",
+    748.6
+   ],
+   [
+    "Isle of Wight",
+    716.6
+   ]
+  ],
+  "least_per_km2": [
+   [
+    "Tyrone",
+    35.4
+   ],
+   [
+    "West Ross",
+    46.0
+   ],
+   [
+    "West Inverness-shire",
+    47.2
+   ],
+   [
+    "West Sutherland",
+    50.7
+   ],
+   [
+    "Caithness",
+    52.3
+   ]
+  ],
+  "ratio_max_min": 25.1,
+  "median_per_km2": 204.5
+ },
+ "signature": {
+  "West Cornwall": {
+   "animal": "Vagrant Emperor",
+   "group": "dragonflies",
+   "lq": 21.6,
+   "n": 122,
+   "birds": [
+    "Chough",
+    11.7,
+    295
+   ],
+   "mammals": [
+    "Grey Seal",
+    13.7,
+    538
+   ],
+   "herps": [
+    "Palmate Newt",
+    5.4,
+    276
+   ],
+   "butterflies": [
+    "Silver-studded Blue",
+    9.4,
+    1824
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Vagrant Emperor",
+    21.6,
+    122
+   ],
+   "plants": [
+    "Western Ramping-fumitory",
+    77.6,
+    260
+   ]
+  },
+  "East Cornwall": {
+   "animal": "Great Northern Diver",
+   "group": "birds",
+   "lq": 12.7,
+   "n": 275,
+   "birds": [
+    "Great Northern Diver",
+    12.7,
+    275
+   ],
+   "mammals": [
+    "Greater Horseshoe Bat",
+    10.9,
+    340
+   ],
+   "herps": [
+    "Common Lizard",
+    1.9,
+    297
+   ],
+   "butterflies": [
+    "Heath Fritillary",
+    11.9,
+    358
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Red-veined Darter",
+    7.0,
+    218
+   ],
+   "plants": [
+    "Cornish Moneywort",
+    28.9,
+    294
+   ]
+  },
+  "South Devon": {
+   "animal": "Cirl Bunting",
+   "group": "birds",
+   "lq": 39.2,
+   "n": 2568,
+   "birds": [
+    "Cirl Bunting",
+    39.2,
+    2568
+   ],
+   "mammals": [
+    "Greater Horseshoe Bat",
+    20.5,
+    887
+   ],
+   "herps": [
+    "Slow-worm",
+    2.6,
+    663
+   ],
+   "butterflies": [
+    "Pearl-bordered Fritillary",
+    8.3,
+    1493
+   ],
+   "moths": [
+    "Hoary Footman",
+    81.1,
+    73
+   ],
+   "dragonflies": [
+    "Southern Damselfly",
+    4.7,
+    855
+   ],
+   "plants": [
+    "Bastard Balm",
+    17.4,
+    125
+   ]
+  },
+  "North Devon": {
+   "animal": "Common Porpoise",
+   "group": "mammals",
+   "lq": 18.3,
+   "n": 138,
+   "birds": [
+    "Spoonbill",
+    10.6,
+    216
+   ],
+   "mammals": [
+    "Common Porpoise",
+    18.3,
+    138
+   ],
+   "herps": [
+    "Palmate Newt",
+    2.4,
+    77
+   ],
+   "butterflies": [
+    "Wood White",
+    8.2,
+    480
+   ],
+   "moths": [
+    "Cocksfoot Moth",
+    130.0,
+    190
+   ],
+   "dragonflies": [
+    "Southern Damselfly",
+    5.3,
+    264
+   ],
+   "plants": [
+    "Devon Whitebeam",
+    57.6,
+    186
+   ]
+  },
+  "South Somerset": {
+   "animal": "Barbastelle",
+   "group": "mammals",
+   "lq": 45.3,
+   "n": 152,
+   "birds": [
+    "Cattle Egret",
+    31.4,
+    255
+   ],
+   "mammals": [
+    "Barbastelle",
+    45.3,
+    152
+   ],
+   "herps": [
+    "Slow-worm",
+    2.5,
+    216
+   ],
+   "butterflies": [
+    "Large Blue",
+    26.1,
+    133
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Variable Damselfly",
+    5.0,
+    228
+   ],
+   "plants": [
+    "French Oat-grass",
+    14.8,
+    34
+   ]
+  },
+  "North Somerset": {
+   "animal": "Eurasian Serotine",
+   "group": "mammals",
+   "lq": 18.7,
+   "n": 702,
+   "birds": [
+    "Glossy Ibis",
+    6.5,
+    66
+   ],
+   "mammals": [
+    "Eurasian Serotine",
+    18.7,
+    702
+   ],
+   "herps": [
+    "Grass Snake",
+    2.2,
+    229
+   ],
+   "butterflies": [
+    "Large Blue",
+    13.7,
+    160
+   ],
+   "moths": [
+    "Reed Veneer",
+    63.4,
+    31
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    4.3,
+    576
+   ],
+   "plants": [
+    "Rootless Duckweed",
+    28.3,
+    76
+   ]
+  },
+  "North Wiltshire": {
+   "animal": "Harvest Mouse",
+   "group": "mammals",
+   "lq": 17.0,
+   "n": 292,
+   "birds": [
+    "Red-crested Pochard",
+    11.7,
+    846
+   ],
+   "mammals": [
+    "Harvest Mouse",
+    17.0,
+    292
+   ],
+   "herps": [
+    "Great Crested Newt",
+    2.2,
+    553
+   ],
+   "butterflies": [
+    "Marsh Fritillary",
+    7.6,
+    1229
+   ],
+   "moths": [
+    "Burnet Companion",
+    14.4,
+    62
+   ],
+   "dragonflies": [
+    "Lesser Emperor",
+    6.2,
+    170
+   ],
+   "plants": [
+    "Spiked Star-of-Bethlehem",
+    30.3,
+    66
+   ]
+  },
+  "South Wiltshire": {
+   "animal": "Stone-curlew",
+   "group": "birds",
+   "lq": 43.3,
+   "n": 2422,
+   "birds": [
+    "Stone-curlew",
+    43.3,
+    2422
+   ],
+   "mammals": [
+    "Harvest Mouse",
+    6.0,
+    90
+   ],
+   "herps": [
+    "Common Toad",
+    4.8,
+    2108
+   ],
+   "butterflies": [
+    "Pearl-bordered Fritillary",
+    5.0,
+    1734
+   ],
+   "moths": [
+    "Argent & Sable",
+    35.7,
+    28
+   ],
+   "dragonflies": [
+    "Broad-bodied Chaser",
+    3.2,
+    712
+   ],
+   "plants": [
+    "Dwarf Sedge",
+    63.7,
+    238
+   ]
+  },
+  "Dorset": {
+   "animal": "Sika Deer",
+   "group": "mammals",
+   "lq": 46.2,
+   "n": 1056,
+   "birds": [
+    "Dartford Warbler",
+    14.0,
+    1026
+   ],
+   "mammals": [
+    "Sika Deer",
+    46.2,
+    1056
+   ],
+   "herps": [
+    "Sand Lizard",
+    41.9,
+    187
+   ],
+   "butterflies": [
+    "Lulworth Skipper",
+    13.6,
+    2857
+   ],
+   "moths": [
+    "Cocksfoot Moth",
+    11.4,
+    31
+   ],
+   "dragonflies": [
+    "Small Red Damselfly",
+    4.5,
+    428
+   ],
+   "plants": [
+    "Marsh Gentian",
+    19.1,
+    80
+   ]
+  },
+  "Isle of Wight": {
+   "animal": "Wall Lizard",
+   "group": "herps",
+   "lq": 70.2,
+   "n": 94,
+   "birds": [
+    "Brent Goose",
+    7.7,
+    130
+   ],
+   "mammals": [
+    "Eurasian Serotine",
+    14.8,
+    198
+   ],
+   "herps": [
+    "Wall Lizard",
+    70.2,
+    94
+   ],
+   "butterflies": [
+    "Glanville Fritillary",
+    61.5,
+    451
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Southern Emerald Damselfly",
+    10.6,
+    53
+   ],
+   "plants": [
+    "French Oat-grass",
+    116.3,
+    76
+   ]
+  },
+  "South Hampshire": {
+   "animal": "Dartford Warbler",
+   "group": "birds",
+   "lq": 10.8,
+   "n": 995,
+   "birds": [
+    "Dartford Warbler",
+    10.8,
+    995
+   ],
+   "mammals": [
+    "Barbastelle",
+    8.6,
+    147
+   ],
+   "herps": [
+    "Wall Lizard",
+    5.9,
+    53
+   ],
+   "butterflies": [
+    "Silver-studded Blue",
+    3.6,
+    5376
+   ],
+   "moths": [
+    "Oak Nycteoline",
+    94.4,
+    364
+   ],
+   "dragonflies": [
+    "Scarce Blue-tailed Damselfly",
+    10.5,
+    2306
+   ],
+   "plants": [
+    "Coral-necklace",
+    36.1,
+    135
+   ]
+  },
+  "North Hampshire": {
+   "animal": "Woodlark",
+   "group": "birds",
+   "lq": 12.7,
+   "n": 811,
+   "birds": [
+    "Woodlark",
+    12.7,
+    811
+   ],
+   "mammals": [
+    "Harvest Mouse",
+    5.1,
+    64
+   ],
+   "herps": [
+    "Slow-worm",
+    4.3,
+    1110
+   ],
+   "butterflies": [
+    "Duke of Burgundy",
+    6.3,
+    808
+   ],
+   "moths": [
+    "Burnet Companion",
+    18.0,
+    178
+   ],
+   "dragonflies": [
+    "Brilliant Emerald",
+    8.6,
+    160
+   ],
+   "plants": [
+    "Stinking Fleabane",
+    21.9,
+    64
+   ]
+  },
+  "West Sussex": {
+   "animal": "White Stork",
+   "group": "birds",
+   "lq": 21.2,
+   "n": 347,
+   "birds": [
+    "White Stork",
+    21.2,
+    347
+   ],
+   "mammals": [
+    "Barbastelle",
+    10.6,
+    131
+   ],
+   "herps": [
+    "Wall Lizard",
+    3.8,
+    63
+   ],
+   "butterflies": [
+    "Purple Emperor",
+    4.7,
+    102
+   ],
+   "moths": [
+    "Burnet Companion",
+    12.1,
+    67
+   ],
+   "dragonflies": [
+    "Brilliant Emerald",
+    4.9,
+    86
+   ],
+   "plants": [
+    "Round-headed Rampion",
+    14.3,
+    171
+   ]
+  },
+  "East Sussex": {
+   "animal": "Bechstein's Bat",
+   "group": "mammals",
+   "lq": 19.9,
+   "n": 48,
+   "birds": [
+    "Bearded Tit",
+    6.0,
+    917
+   ],
+   "mammals": [
+    "Bechstein's Bat",
+    19.9,
+    48
+   ],
+   "herps": [
+    "Slow-worm",
+    1.8,
+    1135
+   ],
+   "butterflies": [
+    "Silver-spotted Skipper",
+    8.8,
+    1793
+   ],
+   "moths": [
+    "Kent Black Arches",
+    56.3,
+    38
+   ],
+   "dragonflies": [
+    "Brilliant Emerald",
+    7.1,
+    248
+   ],
+   "plants": [
+    "Red Star-thistle",
+    38.3,
+    287
+   ]
+  },
+  "East Kent": {
+   "animal": "Heath Fritillary",
+   "group": "butterflies",
+   "lq": 24.8,
+   "n": 2770,
+   "birds": [
+    "Nightingale",
+    5.5,
+    1119
+   ],
+   "mammals": [
+    "Bechstein's Bat",
+    5.9,
+    24
+   ],
+   "herps": [
+    "Marsh Frog",
+    13.0,
+    772
+   ],
+   "butterflies": [
+    "Heath Fritillary",
+    24.8,
+    2770
+   ],
+   "moths": [
+    "Lime Hawk-moth",
+    12.9,
+    142
+   ],
+   "dragonflies": [
+    "Southern Migrant Hawker",
+    5.5,
+    198
+   ],
+   "plants": [
+    "Meadow Clary",
+    22.9,
+    124
+   ]
+  },
+  "West Kent": {
+   "animal": "Southern Emerald Damselfly",
+   "group": "dragonflies",
+   "lq": 13.2,
+   "n": 54,
+   "birds": [
+    "Nightingale",
+    6.2,
+    795
+   ],
+   "mammals": [
+    "Red Fox",
+    7.0,
+    6236
+   ],
+   "herps": [
+    "Marsh Frog",
+    4.1,
+    90
+   ],
+   "butterflies": [
+    "Holly Blue",
+    2.0,
+    2014
+   ],
+   "moths": [
+    "Purple Thorn",
+    74.8,
+    78
+   ],
+   "dragonflies": [
+    "Southern Emerald Damselfly",
+    13.2,
+    54
+   ],
+   "plants": [
+    "Ground-pine",
+    30.7,
+    66
+   ]
+  },
+  "Surrey": {
+   "animal": "European Pond Terrapin",
+   "group": "herps",
+   "lq": 18.0,
+   "n": 111,
+   "birds": [
+    "Dartford Warbler",
+    7.9,
+    761
+   ],
+   "mammals": [
+    "Eurasian Serotine",
+    5.7,
+    743
+   ],
+   "herps": [
+    "European Pond Terrapin",
+    18.0,
+    111
+   ],
+   "butterflies": [
+    "Silver-spotted Skipper",
+    5.2,
+    2998
+   ],
+   "moths": [
+    "Peacock Moth",
+    9.6,
+    50
+   ],
+   "dragonflies": [
+    "Brilliant Emerald",
+    5.4,
+    153
+   ],
+   "plants": [
+    "Ground-pine",
+    19.9,
+    79
+   ]
+  },
+  "South Essex": {
+   "animal": "Southern Emerald Damselfly",
+   "group": "dragonflies",
+   "lq": 40.2,
+   "n": 119,
+   "birds": [
+    "Brent Goose",
+    7.3,
+    608
+   ],
+   "mammals": [
+    "Harbour Seal",
+    5.0,
+    86
+   ],
+   "herps": [
+    "Marsh Frog",
+    7.3,
+    225
+   ],
+   "butterflies": [
+    "Heath Fritillary",
+    9.9,
+    588
+   ],
+   "moths": [
+    "Mottled Umber",
+    42.4,
+    316
+   ],
+   "dragonflies": [
+    "Southern Emerald Damselfly",
+    40.2,
+    119
+   ],
+   "plants": [
+    "Greek Dock",
+    28.9,
+    215
+   ]
+  },
+  "North Essex": {
+   "animal": "Smew",
+   "group": "birds",
+   "lq": 15.4,
+   "n": 1929,
+   "birds": [
+    "Smew",
+    15.4,
+    1929
+   ],
+   "mammals": [
+    "Polecat",
+    7.9,
+    48
+   ],
+   "herps": [
+    "Grass Snake",
+    1.9,
+    306
+   ],
+   "butterflies": [
+    "Purple Emperor",
+    2.8,
+    34
+   ],
+   "moths": [
+    "Festoon",
+    18.0,
+    21
+   ],
+   "dragonflies": [
+    "Willow Emerald Damselfly",
+    6.0,
+    662
+   ],
+   "plants": [
+    "Oxlip",
+    22.1,
+    96
+   ]
+  },
+  "Hertfordshire": {
+   "animal": "Green Sandpiper",
+   "group": "birds",
+   "lq": 13.3,
+   "n": 4483,
+   "birds": [
+    "Green Sandpiper",
+    13.3,
+    4483
+   ],
+   "mammals": [
+    "Natterer's Bat",
+    4.8,
+    415
+   ],
+   "herps": [
+    "Great Crested Newt",
+    1.9,
+    627
+   ],
+   "butterflies": [
+    "Essex Skipper",
+    2.3,
+    1927
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Ruddy Darter",
+    1.6,
+    1025
+   ],
+   "plants": [
+    "Pasqueflower",
+    26.8,
+    46
+   ]
+  },
+  "Middlesex": {
+   "animal": "Pond Terrapin",
+   "group": "herps",
+   "lq": 10.5,
+   "n": 98,
+   "birds": [
+    "Black-necked Grebe",
+    7.9,
+    421
+   ],
+   "mammals": [
+    "Red Fox",
+    6.4,
+    3183
+   ],
+   "herps": [
+    "Pond Terrapin",
+    10.5,
+    98
+   ],
+   "butterflies": [
+    "Holly Blue",
+    4.0,
+    5257
+   ],
+   "moths": [
+    "August Thorn",
+    30.4,
+    25
+   ],
+   "dragonflies": [
+    "Willow Emerald Damselfly",
+    3.0,
+    253
+   ],
+   "plants": [
+    "Black Mulberry",
+    34.5,
+    107
+   ]
+  },
+  "Berkshire": {
+   "animal": "Muntjac",
+   "group": "mammals",
+   "lq": 6.2,
+   "n": 2353,
+   "birds": [
+    "Snow Goose",
+    4.5,
+    93
+   ],
+   "mammals": [
+    "Muntjac",
+    6.2,
+    2353
+   ],
+   "herps": [
+    "Slow-worm",
+    1.9,
+    617
+   ],
+   "butterflies": [
+    "Essex Skipper",
+    2.0,
+    1004
+   ],
+   "moths": [
+    "Rufous Pearl",
+    2.2,
+    241
+   ],
+   "dragonflies": [
+    "Small Red Damselfly",
+    3.9,
+    1219
+   ],
+   "plants": [
+    "Euonymus fortunei",
+    71.6,
+    212
+   ]
+  },
+  "Oxfordshire": {
+   "animal": "Snow Goose",
+   "group": "birds",
+   "lq": 9.4,
+   "n": 104,
+   "birds": [
+    "Snow Goose",
+    9.4,
+    104
+   ],
+   "mammals": [
+    "Muntjac",
+    6.4,
+    1181
+   ],
+   "herps": [
+    "Great Crested Newt",
+    2.4,
+    1222
+   ],
+   "butterflies": [
+    "Silver-spotted Skipper",
+    5.7,
+    530
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Club-tail",
+    8.0,
+    217
+   ],
+   "plants": [
+    "Meadow Clary",
+    26.5,
+    129
+   ]
+  },
+  "Buckinghamshire": {
+   "animal": "Black Hairstreak",
+   "group": "butterflies",
+   "lq": 26.1,
+   "n": 519,
+   "birds": [
+    "Great White Egret",
+    6.6,
+    865
+   ],
+   "mammals": [
+    "Muntjac",
+    7.3,
+    713
+   ],
+   "herps": [
+    "Great Crested Newt",
+    2.4,
+    1401
+   ],
+   "butterflies": [
+    "Black Hairstreak",
+    26.1,
+    519
+   ],
+   "moths": [
+    "Burnet Companion",
+    52.6,
+    294
+   ],
+   "dragonflies": [
+    "Small Red-eyed Damselfly",
+    3.0,
+    896
+   ],
+   "plants": [
+    "Wood Barley",
+    20.1,
+    112
+   ]
+  },
+  "East Suffolk": {
+   "animal": "Chinese Water Deer",
+   "group": "mammals",
+   "lq": 20.7,
+   "n": 106,
+   "birds": [
+    "Great White Egret",
+    13.7,
+    3075
+   ],
+   "mammals": [
+    "Chinese Water Deer",
+    20.7,
+    106
+   ],
+   "herps": [
+    "Adder",
+    3.1,
+    334
+   ],
+   "butterflies": [
+    "Grayling",
+    5.8,
+    1930
+   ],
+   "moths": [
+    "Large Groundling",
+    31.5,
+    93
+   ],
+   "dragonflies": [
+    "Norfolk Aeshna",
+    9.0,
+    1874
+   ],
+   "plants": [
+    "Sea Pea",
+    62.9,
+    129
+   ]
+  },
+  "West Suffolk": {
+   "animal": "Stone-curlew",
+   "group": "birds",
+   "lq": 38.4,
+   "n": 2265,
+   "birds": [
+    "Stone-curlew",
+    38.4,
+    2265
+   ],
+   "mammals": [
+    "Muntjac",
+    6.1,
+    398
+   ],
+   "herps": [
+    "Grass Snake",
+    2.5,
+    96
+   ],
+   "butterflies": [
+    "Purple Hairstreak",
+    2.5,
+    455
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Willow Emerald Damselfly",
+    3.6,
+    645
+   ],
+   "plants": [
+    "Oxlip",
+    38.1,
+    126
+   ]
+  },
+  "East Norfolk": {
+   "animal": "Swallowtail",
+   "group": "butterflies",
+   "lq": 90.8,
+   "n": 1415,
+   "birds": [
+    "Snow Bunting",
+    8.8,
+    235
+   ],
+   "mammals": [
+    "Chinese Water Deer",
+    35.2,
+    185
+   ],
+   "herps": [
+    "Smooth Newt",
+    1.7,
+    478
+   ],
+   "butterflies": [
+    "Swallowtail",
+    90.8,
+    1415
+   ],
+   "moths": [
+    "Giant Water-veneer",
+    26.6,
+    28
+   ],
+   "dragonflies": [
+    "Norfolk Aeshna",
+    9.8,
+    3627
+   ],
+   "plants": [
+    "Milk-parsley",
+    51.2,
+    817
+   ]
+  },
+  "West Norfolk": {
+   "animal": "Natterjack Toad",
+   "group": "herps",
+   "lq": 35.3,
+   "n": 138,
+   "birds": [
+    "Shore Lark",
+    20.9,
+    100
+   ],
+   "mammals": [
+    "Muntjac",
+    12.3,
+    1169
+   ],
+   "herps": [
+    "Natterjack Toad",
+    35.3,
+    138
+   ],
+   "butterflies": [
+    "Wall",
+    3.7,
+    1841
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Scarce Emerald Damselfly",
+    15.7,
+    669
+   ],
+   "plants": [
+    "Shrubby Sea-blite",
+    30.3,
+    177
+   ]
+  },
+  "Cambridgeshire": {
+   "animal": "Chinese Water Deer",
+   "group": "mammals",
+   "lq": 25.9,
+   "n": 431,
+   "birds": [
+    "Spotted Crake",
+    13.9,
+    39
+   ],
+   "mammals": [
+    "Chinese Water Deer",
+    25.9,
+    431
+   ],
+   "herps": [
+    "Smooth Newt",
+    2.4,
+    429
+   ],
+   "butterflies": [
+    "Essex Skipper",
+    3.5,
+    1539
+   ],
+   "moths": [
+    "Striped Wainscot",
+    31.2,
+    103
+   ],
+   "dragonflies": [
+    "Scarce Chaser",
+    5.0,
+    682
+   ],
+   "plants": [
+    "Indehiscent Amaranth",
+    26.0,
+    170
+   ]
+  },
+  "Bedfordshire": {
+   "animal": "Chinese Water Deer",
+   "group": "mammals",
+   "lq": 32.4,
+   "n": 135,
+   "birds": [
+    "Common Tern",
+    3.4,
+    1391
+   ],
+   "mammals": [
+    "Chinese Water Deer",
+    32.4,
+    135
+   ],
+   "herps": [
+    "Grass Snake",
+    2.2,
+    187
+   ],
+   "butterflies": [
+    "Duke of Burgundy",
+    13.0,
+    470
+   ],
+   "moths": [
+    "Six-spot Burnet",
+    8.9,
+    23
+   ],
+   "dragonflies": [
+    "Red-eyed Damselfly",
+    2.4,
+    3438
+   ],
+   "plants": [
+    "Pasqueflower",
+    29.6,
+    45
+   ]
+  },
+  "Huntingdonshire": {
+   "animal": "Chinese Water Deer",
+   "group": "mammals",
+   "lq": 88.6,
+   "n": 263,
+   "birds": [
+    "Smew",
+    4.6,
+    188
+   ],
+   "mammals": [
+    "Chinese Water Deer",
+    88.6,
+    263
+   ],
+   "herps": [
+    "Great Crested Newt",
+    3.0,
+    610
+   ],
+   "butterflies": [
+    "Black Hairstreak",
+    27.3,
+    155
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Scarce Chaser",
+    8.8,
+    570
+   ],
+   "plants": [
+    "Marsh Sow-thistle",
+    24.2,
+    53
+   ]
+  },
+  "Northamptonshire": {
+   "animal": "Harvest Mouse",
+   "group": "mammals",
+   "lq": 8.7,
+   "n": 50,
+   "birds": [
+    "Caspian Gull",
+    3.6,
+    89
+   ],
+   "mammals": [
+    "Harvest Mouse",
+    8.7,
+    50
+   ],
+   "herps": [
+    "Smooth Newt",
+    2.8,
+    517
+   ],
+   "butterflies": [
+    "Wood White",
+    4.8,
+    466
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Scarce Chaser",
+    3.7,
+    782
+   ],
+   "plants": [
+    "Wild Liquorice",
+    11.0,
+    134
+   ]
+  },
+  "East Gloucestershire": {
+   "animal": "Crane",
+   "group": "birds",
+   "lq": 83.4,
+   "n": 505,
+   "birds": [
+    "Crane",
+    83.4,
+    505
+   ],
+   "mammals": [
+    "House Mouse",
+    9.9,
+    25
+   ],
+   "herps": [
+    "Great Crested Newt",
+    1.9,
+    493
+   ],
+   "butterflies": [
+    "Small Blue",
+    6.6,
+    1912
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Club-tail",
+    4.3,
+    134
+   ],
+   "plants": [
+    "Perfoliate Penny-Cress",
+    94.6,
+    190
+   ]
+  },
+  "West Gloucestershire": {
+   "animal": "Wild Boar",
+   "group": "mammals",
+   "lq": 55.6,
+   "n": 208,
+   "birds": [
+    "Ross's Goose",
+    21.6,
+    70
+   ],
+   "mammals": [
+    "Wild Boar",
+    55.6,
+    208
+   ],
+   "herps": [
+    "Wall Lizard",
+    8.7,
+    39
+   ],
+   "butterflies": [
+    "Small Blue",
+    4.4,
+    1094
+   ],
+   "moths": [
+    "Burnet Companion",
+    5.6,
+    23
+   ],
+   "dragonflies": [
+    "Downy Emerald",
+    2.5,
+    153
+   ],
+   "plants": [
+    "Upright Spurge",
+    19.5,
+    62
+   ]
+  },
+  "Monmouthshire": {
+   "animal": "Hazel Dormouse",
+   "group": "mammals",
+   "lq": 64.5,
+   "n": 446,
+   "birds": [
+    "Dipper",
+    5.1,
+    1189
+   ],
+   "mammals": [
+    "Hazel Dormouse",
+    64.5,
+    446
+   ],
+   "herps": [
+    "Grass Snake",
+    3.3,
+    179
+   ],
+   "butterflies": [
+    "Clouded Yellow",
+    2.0,
+    54
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Club-tail",
+    6.7,
+    130
+   ],
+   "plants": [
+    "Rootless Duckweed",
+    24.6,
+    38
+   ]
+  },
+  "Herefordshire": {
+   "animal": "Wood White",
+   "group": "butterflies",
+   "lq": 44.3,
+   "n": 3519,
+   "birds": [
+    "Pied Flycatcher",
+    9.4,
+    1431
+   ],
+   "mammals": [
+    "Hedgehog",
+    6.6,
+    710
+   ],
+   "herps": [
+    "Grass Snake",
+    2.3,
+    150
+   ],
+   "butterflies": [
+    "Wood White",
+    44.3,
+    3519
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Club-tail",
+    16.7,
+    157
+   ],
+   "plants": [
+    "Narrow-leaved Water-dropwort",
+    24.4,
+    91
+   ]
+  },
+  "Worcestershire": {
+   "animal": "Common Club-tail",
+   "group": "dragonflies",
+   "lq": 7.5,
+   "n": 637,
+   "birds": [
+    "Fieldfare",
+    3.2,
+    833
+   ],
+   "mammals": [
+    "Badger",
+    3.0,
+    596
+   ],
+   "herps": [
+    "Pond Terrapin",
+    5.9,
+    57
+   ],
+   "butterflies": [
+    "Wood White",
+    7.2,
+    2160
+   ],
+   "moths": [
+    "Mocha",
+    33.9,
+    23
+   ],
+   "dragonflies": [
+    "Common Club-tail",
+    7.5,
+    637
+   ],
+   "plants": [
+    "Spanish Daffodil",
+    25.7,
+    1533
+   ]
+  },
+  "Warwickshire": {
+   "animal": "Muntjac",
+   "group": "mammals",
+   "lq": 10.6,
+   "n": 2519,
+   "birds": [
+    "Little Ringed Plover",
+    2.6,
+    357
+   ],
+   "mammals": [
+    "Muntjac",
+    10.6,
+    2519
+   ],
+   "herps": [
+    "European Pond Terrapin",
+    5.2,
+    22
+   ],
+   "butterflies": [
+    "Purple Emperor",
+    6.0,
+    184
+   ],
+   "moths": [
+    "Burnet Companion",
+    61.4,
+    363
+   ],
+   "dragonflies": [
+    "White-legged Damselfly",
+    2.3,
+    807
+   ],
+   "plants": [
+    "Narrow-leaved Helleborine",
+    14.3,
+    63
+   ]
+  },
+  "Staffordshire": {
+   "animal": "White-faced Darter",
+   "group": "dragonflies",
+   "lq": 20.1,
+   "n": 572,
+   "birds": [
+    "Jack Snipe",
+    3.6,
+    494
+   ],
+   "mammals": [
+    "Harvest Mouse",
+    8.5,
+    153
+   ],
+   "herps": [
+    "Great Crested Newt",
+    2.0,
+    1286
+   ],
+   "butterflies": [
+    "Small Tortoiseshell",
+    1.6,
+    2085
+   ],
+   "moths": [
+    "Pale-shouldered Tortrix",
+    17.3,
+    24
+   ],
+   "dragonflies": [
+    "White-faced Darter",
+    20.1,
+    572
+   ],
+   "plants": [
+    "Beggarticks",
+    11.0,
+    119
+   ]
+  },
+  "Shropshire": {
+   "animal": "Polecat",
+   "group": "mammals",
+   "lq": 32.0,
+   "n": 490,
+   "birds": [
+    "Dipper",
+    5.6,
+    2478
+   ],
+   "mammals": [
+    "Polecat",
+    32.0,
+    490
+   ],
+   "herps": [
+    "Common Lizard",
+    1.5,
+    1167
+   ],
+   "butterflies": [
+    "Wood White",
+    8.5,
+    1243
+   ],
+   "moths": [
+    "Pear Leaf Blister Moth",
+    7.1,
+    120
+   ],
+   "dragonflies": [
+    "Common Club-tail",
+    9.4,
+    543
+   ],
+   "plants": [
+    "Narcissus scaberulus",
+    24.5,
+    465
+   ]
+  },
+  "Glamorganshire": {
+   "animal": "Hazel Dormouse",
+   "group": "mammals",
+   "lq": 11.0,
+   "n": 187,
+   "birds": [
+    "Wood Duck",
+    4.9,
+    42
+   ],
+   "mammals": [
+    "Hazel Dormouse",
+    11.0,
+    187
+   ],
+   "herps": [
+    "Palmate Newt",
+    3.6,
+    620
+   ],
+   "butterflies": [
+    "Marsh Fritillary",
+    9.2,
+    447
+   ],
+   "moths": [
+    "Double-line",
+    340.6,
+    166
+   ],
+   "dragonflies": [
+    "Southern Damselfly",
+    4.3,
+    408
+   ],
+   "plants": [
+    "Pearly Everlasting",
+    26.9,
+    125
+   ]
+  },
+  "Breconshire": {
+   "animal": "Lesser Scaup",
+   "group": "birds",
+   "lq": 26.9,
+   "n": 33,
+   "birds": [
+    "Lesser Scaup",
+    26.9,
+    33
+   ],
+   "mammals": [
+    "Lesser Horseshoe Bat",
+    15.6,
+    1301
+   ],
+   "herps": [
+    "Palmate Newt",
+    1.9,
+    79
+   ],
+   "butterflies": [
+    "Marsh Fritillary",
+    8.3,
+    97
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Scarce Blue-tailed Damselfly",
+    4.9,
+    67
+   ],
+   "plants": [
+    "Soft-leaved Sedge",
+    50.1,
+    72
+   ]
+  },
+  "Radnorshire": {
+   "animal": "Dipper",
+   "group": "birds",
+   "lq": 23.7,
+   "n": 1729,
+   "birds": [
+    "Dipper",
+    23.7,
+    1729
+   ],
+   "mammals": [
+    "American Mink",
+    13.0,
+    150
+   ],
+   "herps": [
+    "Palmate Newt",
+    2.2,
+    91
+   ],
+   "butterflies": [
+    "Small Pearl-bordered Fritillary",
+    10.6,
+    141
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    3.7,
+    739
+   ],
+   "plants": [
+    "Wood Bitter-vetch",
+    46.9,
+    60
+   ]
+  },
+  "Carmarthenshire": {
+   "animal": "Brown Hairstreak",
+   "group": "butterflies",
+   "lq": 59.5,
+   "n": 90,
+   "birds": [
+    "Pied Flycatcher",
+    8.6,
+    879
+   ],
+   "mammals": [
+    "Hazel Dormouse",
+    44.6,
+    165
+   ],
+   "herps": [
+    "Slow-worm",
+    2.0,
+    142
+   ],
+   "butterflies": [
+    "Brown Hairstreak",
+    59.5,
+    90
+   ],
+   "moths": [
+    "Daisy Tuft",
+    104.5,
+    27
+   ],
+   "dragonflies": [
+    "Small Red Damselfly",
+    3.2,
+    128
+   ],
+   "plants": [
+    "Tenby Daffodil",
+    36.1,
+    86
+   ]
+  },
+  "Pembrokeshire": {
+   "animal": "Manx Shearwater",
+   "group": "birds",
+   "lq": 69.9,
+   "n": 2331,
+   "birds": [
+    "Manx Shearwater",
+    69.9,
+    2331
+   ],
+   "mammals": [
+    "Greater Horseshoe Bat",
+    42.6,
+    1234
+   ],
+   "herps": [
+    "Adder",
+    3.4,
+    206
+   ],
+   "butterflies": [
+    "Silver-studded Blue",
+    17.5,
+    2422
+   ],
+   "moths": [
+    "Six-spot Burnet",
+    13.9,
+    92
+   ],
+   "dragonflies": [
+    "Southern Damselfly",
+    15.4,
+    2454
+   ],
+   "plants": [
+    "Tenby Daffodil",
+    78.0,
+    128
+   ]
+  },
+  "Cardiganshire": {
+   "animal": "Large Heath",
+   "group": "butterflies",
+   "lq": 65.0,
+   "n": 544,
+   "birds": [
+    "Woodcock",
+    15.2,
+    1291
+   ],
+   "mammals": [
+    "Brandt's Bat",
+    24.7,
+    21
+   ],
+   "herps": [
+    "Common Lizard",
+    2.7,
+    252
+   ],
+   "butterflies": [
+    "Large Heath",
+    65.0,
+    544
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    4.5,
+    649
+   ],
+   "plants": [
+    "Large-leaved Avens",
+    32.5,
+    45
+   ]
+  },
+  "Montgomeryshire": {
+   "animal": "Pied Flycatcher",
+   "group": "birds",
+   "lq": 16.6,
+   "n": 1593,
+   "birds": [
+    "Pied Flycatcher",
+    16.6,
+    1593
+   ],
+   "mammals": [
+    "American Mink",
+    14.7,
+    262
+   ],
+   "herps": [
+    "Palmate Newt",
+    2.6,
+    75
+   ],
+   "butterflies": [
+    "Pearl-bordered Fritillary",
+    18.0,
+    111
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Club-tail",
+    10.0,
+    100
+   ],
+   "plants": [
+    "Rhododendron ponticum",
+    62.6,
+    241
+   ]
+  },
+  "Merionethshire": {
+   "animal": "Hawfinch",
+   "group": "birds",
+   "lq": 118.1,
+   "n": 1655,
+   "birds": [
+    "Hawfinch",
+    118.1,
+    1655
+   ],
+   "mammals": [
+    "Lesser Horseshoe Bat",
+    30.7,
+    2038
+   ],
+   "herps": [
+    "Slow-worm",
+    2.7,
+    104
+   ],
+   "butterflies": [
+    "Silver-studded Blue",
+    17.1,
+    508
+   ],
+   "moths": [
+    "Common Heath",
+    56.1,
+    74
+   ],
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    5.0,
+    213
+   ],
+   "plants": [
+    "Sharp Rush",
+    45.1,
+    61
+   ]
+  },
+  "Caernarvonshire": {
+   "animal": "Chough",
+   "group": "birds",
+   "lq": 81.4,
+   "n": 2096,
+   "birds": [
+    "Chough",
+    81.4,
+    2096
+   ],
+   "mammals": [
+    "Lesser Horseshoe Bat",
+    36.0,
+    1633
+   ],
+   "herps": [
+    "Palmate Newt",
+    3.2,
+    61
+   ],
+   "butterflies": [
+    "Silver-studded Blue",
+    22.6,
+    1504
+   ],
+   "moths": [
+    "Six-spot Burnet",
+    12.0,
+    40
+   ],
+   "dragonflies": [
+    "Keeled Skimmer",
+    4.3,
+    263
+   ],
+   "plants": [
+    "Dwarf Eelgrass",
+    24.3,
+    237
+   ]
+  },
+  "Denbighshire": {
+   "animal": "Large Heath",
+   "group": "butterflies",
+   "lq": 37.6,
+   "n": 299,
+   "birds": [
+    "Pied Flycatcher",
+    13.7,
+    2009
+   ],
+   "mammals": [
+    "Lesser Horseshoe Bat",
+    20.6,
+    1453
+   ],
+   "herps": [
+    "Great Crested Newt",
+    1.9,
+    527
+   ],
+   "butterflies": [
+    "Large Heath",
+    37.6,
+    299
+   ],
+   "moths": null,
+   "dragonflies": [
+    "White-faced Darter",
+    23.7,
+    444
+   ],
+   "plants": [
+    "Bog-rosemary",
+    9.4,
+    90
+   ]
+  },
+  "Flintshire": {
+   "animal": "Natterjack Toad",
+   "group": "herps",
+   "lq": 22.6,
+   "n": 75,
+   "birds": [
+    "Spotted Redshank",
+    14.8,
+    305
+   ],
+   "mammals": [
+    "Lesser Horseshoe Bat",
+    12.7,
+    749
+   ],
+   "herps": [
+    "Natterjack Toad",
+    22.6,
+    75
+   ],
+   "butterflies": [
+    "White-letter Hairstreak",
+    8.4,
+    39
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Beautiful Demoiselle",
+    2.0,
+    60
+   ],
+   "plants": [
+    "Spring Sandwort",
+    23.2,
+    20
+   ]
+  },
+  "Anglesey": {
+   "animal": "Chough",
+   "group": "birds",
+   "lq": 41.5,
+   "n": 701,
+   "birds": [
+    "Chough",
+    41.5,
+    701
+   ],
+   "mammals": [
+    "American Mink",
+    11.2,
+    53
+   ],
+   "herps": [
+    "Adder",
+    2.6,
+    95
+   ],
+   "butterflies": [
+    "Silver-studded Blue",
+    16.8,
+    803
+   ],
+   "moths": [
+    "Oblique Carpet",
+    22.5,
+    38
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    7.9,
+    166
+   ],
+   "plants": [
+    "Common Sea-lavender",
+    27.2,
+    265
+   ]
+  },
+  "South Lincolnshire": {
+   "animal": "Harbour Seal",
+   "group": "mammals",
+   "lq": 51.8,
+   "n": 480,
+   "birds": [
+    "Little Owl",
+    12.1,
+    1554
+   ],
+   "mammals": [
+    "Harbour Seal",
+    51.8,
+    480
+   ],
+   "herps": [
+    "Grass Snake",
+    2.8,
+    69
+   ],
+   "butterflies": [
+    "Grizzled Skipper",
+    17.5,
+    995
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Variable Damselfly",
+    2.5,
+    134
+   ],
+   "plants": [
+    "Viburnum trilobum",
+    27.9,
+    64
+   ]
+  },
+  "North Lincolnshire": {
+   "animal": "Water Vole",
+   "group": "mammals",
+   "lq": 54.8,
+   "n": 12252,
+   "birds": [
+    "Lapland Bunting",
+    17.9,
+    79
+   ],
+   "mammals": [
+    "Water Vole",
+    54.8,
+    12252
+   ],
+   "herps": [
+    "Smooth Newt",
+    2.0,
+    224
+   ],
+   "butterflies": [
+    "Wall",
+    4.3,
+    1301
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Willow Emerald Damselfly",
+    2.4,
+    278
+   ],
+   "plants": [
+    "Opposite-leaved Pondweed",
+    12.1,
+    136
+   ]
+  },
+  "Leicestershire": {
+   "animal": "Caspian Gull",
+   "group": "birds",
+   "lq": 12.5,
+   "n": 343,
+   "birds": [
+    "Caspian Gull",
+    12.5,
+    343
+   ],
+   "mammals": [
+    "Badger",
+    6.2,
+    2191
+   ],
+   "herps": [
+    "Smooth Newt",
+    2.5,
+    903
+   ],
+   "butterflies": [
+    "Purple Emperor",
+    11.4,
+    127
+   ],
+   "moths": [
+    "Juniper Carpet",
+    5.8,
+    158
+   ],
+   "dragonflies": [
+    "White-legged Damselfly",
+    2.8,
+    979
+   ],
+   "plants": [
+    "Caucasian Wingnut",
+    8.3,
+    40
+   ]
+  },
+  "Nottinghamshire": {
+   "animal": "Great White Egret",
+   "group": "birds",
+   "lq": 7.8,
+   "n": 1564,
+   "birds": [
+    "Great White Egret",
+    7.8,
+    1564
+   ],
+   "mammals": [
+    "Red Deer",
+    7.3,
+    1054
+   ],
+   "herps": [
+    "Smooth Newt",
+    2.6,
+    465
+   ],
+   "butterflies": [
+    "Small Tortoiseshell",
+    1.9,
+    3960
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Brown Hawker",
+    2.2,
+    2192
+   ],
+   "plants": [
+    "Small-flowered Winter-cress",
+    23.2,
+    83
+   ]
+  },
+  "Derbyshire": {
+   "animal": "Brandt's Bat",
+   "group": "mammals",
+   "lq": 13.9,
+   "n": 44,
+   "birds": [
+    "Yellow-legged Gull",
+    5.4,
+    370
+   ],
+   "mammals": [
+    "Brandt's Bat",
+    13.9,
+    44
+   ],
+   "herps": [
+    "Great Crested Newt",
+    1.3,
+    730
+   ],
+   "butterflies": [
+    "White-letter Hairstreak",
+    2.4,
+    234
+   ],
+   "moths": [
+    "Chimney Sweep",
+    62.1,
+    524
+   ],
+   "dragonflies": [
+    "Brown Hawker",
+    2.1,
+    1684
+   ],
+   "plants": [
+    "Spring Sandwort",
+    12.6,
+    75
+   ]
+  },
+  "Cheshire": {
+   "animal": "Harvest Mouse",
+   "group": "mammals",
+   "lq": 5.7,
+   "n": 128,
+   "birds": [
+    "Willow Tit",
+    2.9,
+    1464
+   ],
+   "mammals": [
+    "Harvest Mouse",
+    5.7,
+    128
+   ],
+   "herps": [
+    "Great Crested Newt",
+    1.9,
+    1610
+   ],
+   "butterflies": [
+    "White-letter Hairstreak",
+    5.3,
+    156
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Club-tail",
+    4.4,
+    278
+   ],
+   "plants": [
+    "Cowbane",
+    8.5,
+    87
+   ]
+  },
+  "South Lancashire": {
+   "animal": "Natterjack Toad",
+   "group": "herps",
+   "lq": 6.9,
+   "n": 54,
+   "birds": [
+    "Willow Tit",
+    3.3,
+    1954
+   ],
+   "mammals": [
+    "Mole",
+    4.3,
+    2095
+   ],
+   "herps": [
+    "Natterjack Toad",
+    6.9,
+    54
+   ],
+   "butterflies": [
+    "Wall",
+    3.9,
+    582
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Black Darter",
+    3.2,
+    2120
+   ],
+   "plants": [
+    "White Dogwood",
+    11.1,
+    542
+   ]
+  },
+  "West Lancashire": {
+   "animal": "High Brown Fritillary",
+   "group": "butterflies",
+   "lq": 32.7,
+   "n": 2922,
+   "birds": [
+    "Bearded Tit",
+    16.3,
+    1704
+   ],
+   "mammals": [
+    "Brandt's Bat",
+    14.8,
+    29
+   ],
+   "herps": [
+    "Great Crested Newt",
+    1.8,
+    418
+   ],
+   "butterflies": [
+    "High Brown Fritillary",
+    32.7,
+    2922
+   ],
+   "moths": [
+    "Chimney Sweep",
+    80.0,
+    180
+   ],
+   "dragonflies": [
+    "Red-veined Darter",
+    8.3,
+    297
+   ],
+   "plants": [
+    "Dark-red Helleborine",
+    25.8,
+    53
+   ]
+  },
+  "South-east Yorkshire": {
+   "animal": "Mole",
+   "group": "mammals",
+   "lq": 7.9,
+   "n": 1567,
+   "birds": [
+    "Little Gull",
+    8.2,
+    273
+   ],
+   "mammals": [
+    "Mole",
+    7.9,
+    1567
+   ],
+   "herps": [
+    "Pond Terrapin",
+    7.2,
+    81
+   ],
+   "butterflies": [
+    "Small Skipper",
+    2.2,
+    1007
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Red-veined Darter",
+    4.8,
+    382
+   ],
+   "plants": [
+    "Marsh Pea",
+    14.3,
+    25
+   ]
+  },
+  "North-east Yorkshire": {
+   "animal": "Duke of Burgundy",
+   "group": "butterflies",
+   "lq": 14.5,
+   "n": 236,
+   "birds": [
+    "Willow Grouse",
+    8.0,
+    20
+   ],
+   "mammals": [
+    "Daubenton's Bat",
+    3.1,
+    996
+   ],
+   "herps": [
+    "Adder",
+    1.8,
+    194
+   ],
+   "butterflies": [
+    "Duke of Burgundy",
+    14.5,
+    236
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Black Darter",
+    2.1,
+    529
+   ],
+   "plants": [
+    "Italian Toadflax",
+    12.6,
+    82
+   ]
+  },
+  "South-west Yorkshire": {
+   "animal": "Large Heath",
+   "group": "butterflies",
+   "lq": 16.5,
+   "n": 229,
+   "birds": [
+    "Willow Grouse",
+    11.8,
+    54
+   ],
+   "mammals": [
+    "Mountain Hare",
+    7.2,
+    159
+   ],
+   "herps": [
+    "Common Frog",
+    1.4,
+    537
+   ],
+   "butterflies": [
+    "Large Heath",
+    16.5,
+    229
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Lesser Emperor",
+    2.9,
+    83
+   ],
+   "plants": [
+    "Floating Pennywort",
+    13.8,
+    1390
+   ]
+  },
+  "Mid-west Yorkshire": {
+   "animal": "Northern Brown Argus",
+   "group": "butterflies",
+   "lq": 21.6,
+   "n": 1717,
+   "birds": [
+    "Willow Grouse",
+    6.7,
+    20
+   ],
+   "mammals": [
+    "Rabbit",
+    4.0,
+    3121
+   ],
+   "herps": [
+    "Common Frog",
+    1.7,
+    450
+   ],
+   "butterflies": [
+    "Northern Brown Argus",
+    21.6,
+    1717
+   ],
+   "moths": [
+    "Chimney Sweep",
+    15.2,
+    47
+   ],
+   "dragonflies": [
+    "Common Hawker",
+    2.5,
+    1064
+   ],
+   "plants": [
+    "Bird's-eye Primrose",
+    32.7,
+    216
+   ]
+  },
+  "North-west Yorkshire": {
+   "animal": "Red Grouse (scotica)",
+   "group": "birds",
+   "lq": 13.7,
+   "n": 1100,
+   "birds": [
+    "Red Grouse (scotica)",
+    13.7,
+    1100
+   ],
+   "mammals": [
+    "Mole",
+    11.5,
+    764
+   ],
+   "herps": [
+    "Common Toad",
+    1.9,
+    90
+   ],
+   "butterflies": [
+    "Small Tortoiseshell",
+    2.6,
+    1458
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Black-tailed Skimmer",
+    2.0,
+    354
+   ],
+   "plants": [
+    "Pale Forget-me-not",
+    28.7,
+    72
+   ]
+  },
+  "County Durham": {
+   "animal": "Bank Vole",
+   "group": "mammals",
+   "lq": 25.9,
+   "n": 1144,
+   "birds": [
+    "Ferruginous Duck",
+    7.3,
+    32
+   ],
+   "mammals": [
+    "Bank Vole",
+    25.9,
+    1144
+   ],
+   "herps": [
+    "Adder",
+    2.0,
+    407
+   ],
+   "butterflies": [
+    "Northern Brown Argus",
+    9.8,
+    1552
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Emerald Damselfly",
+    2.6,
+    1954
+   ],
+   "plants": [
+    "Dark-red Helleborine",
+    20.2,
+    61
+   ]
+  },
+  "South Northumberland": {
+   "animal": "Roseate Tern",
+   "group": "birds",
+   "lq": 34.0,
+   "n": 276,
+   "birds": [
+    "Roseate Tern",
+    34.0,
+    276
+   ],
+   "mammals": [
+    "Nathusius's Pipistrelle",
+    19.1,
+    31
+   ],
+   "herps": [
+    "Adder",
+    2.4,
+    285
+   ],
+   "butterflies": [
+    "Wall",
+    5.9,
+    528
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    3.6,
+    500
+   ],
+   "plants": [
+    "Dune Helleborine",
+    23.7,
+    93
+   ]
+  },
+  "North Northumberland": {
+   "animal": "Eider",
+   "group": "birds",
+   "lq": 11.7,
+   "n": 1564,
+   "birds": [
+    "Eider",
+    11.7,
+    1564
+   ],
+   "mammals": [
+    "Brown Hare",
+    6.2,
+    719
+   ],
+   "herps": [
+    "Adder",
+    6.5,
+    222
+   ],
+   "butterflies": [
+    "Wall",
+    9.9,
+    798
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    4.5,
+    148
+   ],
+   "plants": [
+    "Pirri-pirri-bur",
+    39.5,
+    346
+   ]
+  },
+  "Westmorland": {
+   "animal": "High Brown Fritillary",
+   "group": "butterflies",
+   "lq": 24.1,
+   "n": 3279,
+   "birds": [
+    "Hawfinch",
+    5.2,
+    231
+   ],
+   "mammals": [
+    "Brandt's Bat",
+    29.3,
+    45
+   ],
+   "herps": [
+    "Natterjack Toad",
+    12.3,
+    43
+   ],
+   "butterflies": [
+    "High Brown Fritillary",
+    24.1,
+    3279
+   ],
+   "moths": [
+    "Chimney Sweep",
+    79.9,
+    311
+   ],
+   "dragonflies": [
+    "White-faced Darter",
+    13.8,
+    430
+   ],
+   "plants": [
+    "Blue Moor-grass",
+    26.0,
+    296
+   ]
+  },
+  "Cumberland": {
+   "animal": "Otter",
+   "group": "mammals",
+   "lq": 13.7,
+   "n": 1042,
+   "birds": [
+    "Whinchat",
+    11.0,
+    2042
+   ],
+   "mammals": [
+    "Otter",
+    13.7,
+    1042
+   ],
+   "herps": [
+    "Natterjack Toad",
+    6.9,
+    23
+   ],
+   "butterflies": [
+    "Wall",
+    11.8,
+    379
+   ],
+   "moths": null,
+   "dragonflies": [
+    "White-faced Darter",
+    9.8,
+    233
+   ],
+   "plants": [
+    "Sand Leek",
+    14.2,
+    116
+   ]
+  },
+  "Isle of Man": {
+   "animal": "Chough",
+   "group": "birds",
+   "lq": 21.0,
+   "n": 244,
+   "birds": [
+    "Chough",
+    21.0,
+    244
+   ],
+   "mammals": [
+    "Leisler's Bat",
+    18.8,
+    75
+   ],
+   "herps": [
+    "Common Lizard",
+    4.8,
+    118
+   ],
+   "butterflies": [
+    "Dark Green Fritillary",
+    12.4,
+    427
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    5.3,
+    204
+   ],
+   "plants": [
+    "New Zealand Holly",
+    49.4,
+    36
+   ]
+  },
+  "Dumfriesshire": {
+   "animal": "Black Grouse",
+   "group": "birds",
+   "lq": 13.0,
+   "n": 749,
+   "birds": [
+    "Black Grouse",
+    13.0,
+    749
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    2.2,
+    23324
+   ],
+   "herps": [
+    "Common Frog",
+    2.1,
+    152
+   ],
+   "butterflies": [
+    "Green-veined White",
+    4.2,
+    800
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Variable Damselfly",
+    9.6,
+    361
+   ],
+   "plants": [
+    "Dark-leaved Willow",
+    25.2,
+    68
+   ]
+  },
+  "Kirkcudbrightshire": {
+   "animal": "Black Grouse",
+   "group": "birds",
+   "lq": 26.7,
+   "n": 1184,
+   "birds": [
+    "Black Grouse",
+    26.7,
+    1184
+   ],
+   "mammals": [
+    "Leisler's Bat",
+    8.2,
+    2055
+   ],
+   "herps": [
+    "Adder",
+    3.0,
+    118
+   ],
+   "butterflies": [
+    "Pearl-bordered Fritillary",
+    22.6,
+    574
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    5.6,
+    659
+   ],
+   "plants": [
+    "Spignel",
+    26.2,
+    58
+   ]
+  },
+  "Wigtownshire": {
+   "animal": "Leisler's Bat",
+   "group": "mammals",
+   "lq": 10.4,
+   "n": 1333,
+   "birds": [
+    "Barn Owl",
+    10.2,
+    1531
+   ],
+   "mammals": [
+    "Leisler's Bat",
+    10.4,
+    1333
+   ],
+   "herps": [
+    "Adder",
+    2.9,
+    32
+   ],
+   "butterflies": null,
+   "moths": null,
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    5.1,
+    124
+   ],
+   "plants": [
+    "Oysterplant",
+    57.3,
+    25
+   ]
+  },
+  "Ayrshire": {
+   "animal": "Black Grouse",
+   "group": "birds",
+   "lq": 18.2,
+   "n": 789,
+   "birds": [
+    "Black Grouse",
+    18.2,
+    789
+   ],
+   "mammals": [
+    "Leisler's Bat",
+    4.3,
+    450
+   ],
+   "herps": [
+    "Common Toad",
+    2.6,
+    312
+   ],
+   "butterflies": [
+    "Orange-tip",
+    3.7,
+    573
+   ],
+   "moths": [
+    "November Moth",
+    31.4,
+    36
+   ],
+   "dragonflies": [
+    "Common Hawker",
+    5.9,
+    197
+   ],
+   "plants": [
+    "Spring Sandwort",
+    26.2,
+    42
+   ]
+  },
+  "Renfrewshire": {
+   "animal": "Lesser Scaup",
+   "group": "birds",
+   "lq": 43.6,
+   "n": 54,
+   "birds": [
+    "Lesser Scaup",
+    43.6,
+    54
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    3.8,
+    7411
+   ],
+   "herps": [
+    "Common Toad",
+    2.8,
+    112
+   ],
+   "butterflies": [
+    "Orange-tip",
+    4.6,
+    819
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    8.6,
+    275
+   ],
+   "plants": [
+    "Spignel",
+    39.8,
+    38
+   ]
+  },
+  "Lanarkshire": {
+   "animal": "Common Hawker",
+   "group": "dragonflies",
+   "lq": 7.4,
+   "n": 338,
+   "birds": [
+    "Jack Snipe",
+    7.1,
+    447
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    3.4,
+    13276
+   ],
+   "herps": [
+    "Common Frog",
+    2.9,
+    342
+   ],
+   "butterflies": [
+    "Small Pearl-bordered Fritillary",
+    5.2,
+    326
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    7.4,
+    338
+   ],
+   "plants": [
+    "Tufted Loosestrife",
+    31.7,
+    44
+   ]
+  },
+  "Peeblesshire": {
+   "animal": "Siskin",
+   "group": "birds",
+   "lq": 12.6,
+   "n": 4221,
+   "birds": [
+    "Siskin",
+    12.6,
+    4221
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    2.7,
+    11412
+   ],
+   "herps": null,
+   "butterflies": null,
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    6.5,
+    86
+   ],
+   "plants": [
+    "Hairy Stonecrop",
+    34.7,
+    56
+   ]
+  },
+  "Selkirkshire": {
+   "animal": "Black Grouse",
+   "group": "birds",
+   "lq": 24.6,
+   "n": 361,
+   "birds": [
+    "Black Grouse",
+    24.6,
+    361
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    2.3,
+    5332
+   ],
+   "herps": null,
+   "butterflies": null,
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    8.2,
+    32
+   ],
+   "plants": [
+    "Pyrenean Scurvygrass",
+    36.3,
+    35
+   ]
+  },
+  "Roxburghshire": {
+   "animal": "Scotch Argus",
+   "group": "butterflies",
+   "lq": 20.4,
+   "n": 78,
+   "birds": [
+    "Crossbill",
+    14.6,
+    291
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    2.9,
+    20834
+   ],
+   "herps": [
+    "Common Toad",
+    2.6,
+    77
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    20.4,
+    78
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    7.8,
+    116
+   ],
+   "plants": [
+    "Giant Hogweed",
+    25.0,
+    5209
+   ]
+  },
+  "Berwickshire": {
+   "animal": "Northern Brown Argus",
+   "group": "butterflies",
+   "lq": 28.5,
+   "n": 253,
+   "birds": [
+    "Quail",
+    28.1,
+    98
+   ],
+   "mammals": [
+    "Minke Whale",
+    13.7,
+    58
+   ],
+   "herps": null,
+   "butterflies": [
+    "Northern Brown Argus",
+    28.5,
+    253
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Red-veined Darter",
+    7.6,
+    53
+   ],
+   "plants": [
+    "Giant Hogweed",
+    35.0,
+    5760
+   ]
+  },
+  "East Lothian": {
+   "animal": "Gannet",
+   "group": "birds",
+   "lq": 12.4,
+   "n": 319,
+   "birds": [
+    "Gannet",
+    12.4,
+    319
+   ],
+   "mammals": [
+    "Minke Whale",
+    6.7,
+    22
+   ],
+   "herps": [
+    "Adder",
+    4.3,
+    77
+   ],
+   "butterflies": [
+    "Wall",
+    3.8,
+    343
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    3.9,
+    238
+   ],
+   "plants": [
+    "Sand Couch",
+    55.6,
+    52
+   ]
+  },
+  "Midlothian": {
+   "animal": "Waxwing",
+   "group": "birds",
+   "lq": 7.3,
+   "n": 119,
+   "birds": [
+    "Waxwing",
+    7.3,
+    119
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    2.9,
+    14135
+   ],
+   "herps": [
+    "Common Toad",
+    3.3,
+    401
+   ],
+   "butterflies": [
+    "Grayling",
+    4.9,
+    362
+   ],
+   "moths": [
+    "Brown-Spot Pinion",
+    24.4,
+    29
+   ],
+   "dragonflies": [
+    "Blue-tailed Damselfly",
+    4.1,
+    1860
+   ],
+   "plants": [
+    "Sticky Catchfly",
+    157.8,
+    145
+   ]
+  },
+  "West Lothian": {
+   "animal": "Common Hawker",
+   "group": "dragonflies",
+   "lq": 8.2,
+   "n": 196,
+   "birds": [
+    "Eider",
+    7.8,
+    410
+   ],
+   "mammals": [
+    "Soprano Pipistrelle",
+    4.1,
+    8417
+   ],
+   "herps": [
+    "Common Toad",
+    2.6,
+    59
+   ],
+   "butterflies": [
+    "Green-veined White",
+    3.0,
+    737
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    8.2,
+    196
+   ],
+   "plants": [
+    "Tuberous Comfrey",
+    9.7,
+    74
+   ]
+  },
+  "Fifeshire": {
+   "animal": "Velvet Scoter",
+   "group": "birds",
+   "lq": 24.1,
+   "n": 364,
+   "birds": [
+    "Velvet Scoter",
+    24.1,
+    364
+   ],
+   "mammals": [
+    "Bottle-nosed Dolphin",
+    2.8,
+    68
+   ],
+   "herps": [
+    "Common Toad",
+    3.4,
+    97
+   ],
+   "butterflies": [
+    "Small Copper",
+    8.3,
+    3474
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    4.4,
+    308
+   ],
+   "plants": [
+    "Common Scurvygrass",
+    17.9,
+    42
+   ]
+  },
+  "Stirlingshire": {
+   "animal": "Small Pearl-bordered Fritillary",
+   "group": "butterflies",
+   "lq": 12.2,
+   "n": 344,
+   "birds": [
+    "Wood Duck",
+    9.5,
+    29
+   ],
+   "mammals": [
+    "Red Squirrel",
+    3.2,
+    4442
+   ],
+   "herps": [
+    "Adder",
+    3.0,
+    72
+   ],
+   "butterflies": [
+    "Small Pearl-bordered Fritillary",
+    12.2,
+    344
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Black Darter",
+    5.1,
+    163
+   ],
+   "plants": [
+    "Tufted Loosestrife",
+    47.8,
+    44
+   ]
+  },
+  "West Perthshire": {
+   "animal": "Northern Emerald",
+   "group": "dragonflies",
+   "lq": 36.8,
+   "n": 57,
+   "birds": [
+    "Pink-footed Goose",
+    8.8,
+    1018
+   ],
+   "mammals": [
+    "Red Squirrel",
+    5.0,
+    11259
+   ],
+   "herps": [
+    "Common Lizard",
+    2.8,
+    188
+   ],
+   "butterflies": [
+    "Northern Brown Argus",
+    19.5,
+    95
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Northern Emerald",
+    36.8,
+    57
+   ],
+   "plants": [
+    "Tall Bog-sedge",
+    17.8,
+    21
+   ]
+  },
+  "Mid Perthshire": {
+   "animal": "Mountain Ringlet",
+   "group": "butterflies",
+   "lq": 906.1,
+   "n": 188,
+   "birds": [
+    "Black Grouse",
+    21.8,
+    917
+   ],
+   "mammals": [
+    "Beaver",
+    16.5,
+    18292
+   ],
+   "herps": [
+    "Common Lizard",
+    3.0,
+    163
+   ],
+   "butterflies": [
+    "Mountain Ringlet",
+    906.1,
+    188
+   ],
+   "moths": [
+    "Small Argent & Sable",
+    215.4,
+    64
+   ],
+   "dragonflies": [
+    "Northern Damselfly",
+    39.2,
+    87
+   ],
+   "plants": [
+    "Rock Speedwell",
+    106.1,
+    216
+   ]
+  },
+  "East Perthshire": {
+   "animal": "Scotch Argus",
+   "group": "butterflies",
+   "lq": 84.2,
+   "n": 771,
+   "birds": [
+    "Bearded Tit",
+    25.0,
+    658
+   ],
+   "mammals": [
+    "Beaver",
+    13.4,
+    10732
+   ],
+   "herps": [
+    "Adder",
+    2.6,
+    35
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    84.2,
+    771
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Northern Damselfly",
+    30.1,
+    39
+   ],
+   "plants": [
+    "Alpine Rush",
+    63.8,
+    46
+   ]
+  },
+  "Angus": {
+   "animal": "Ring Ouzel",
+   "group": "birds",
+   "lq": 10.0,
+   "n": 513,
+   "birds": [
+    "Ring Ouzel",
+    10.0,
+    513
+   ],
+   "mammals": [
+    "Beaver",
+    7.1,
+    5795
+   ],
+   "herps": [
+    "Adder",
+    3.9,
+    43
+   ],
+   "butterflies": [
+    "Green-veined White",
+    3.9,
+    1892
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    5.9,
+    149
+   ],
+   "plants": [
+    "Spignel",
+    33.4,
+    48
+   ]
+  },
+  "Kincardineshire": {
+   "animal": "Bottle-nosed Dolphin",
+   "group": "mammals",
+   "lq": 69.0,
+   "n": 372,
+   "birds": [
+    "Storm Petrel",
+    18.4,
+    176
+   ],
+   "mammals": [
+    "Bottle-nosed Dolphin",
+    69.0,
+    372
+   ],
+   "herps": [
+    "Palmate Newt",
+    4.4,
+    30
+   ],
+   "butterflies": [
+    "Large Heath",
+    8.3,
+    24
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    7.2,
+    129
+   ],
+   "plants": [
+    "White Butterbur",
+    16.0,
+    36
+   ]
+  },
+  "South Aberdeenshire": {
+   "animal": "Pearl-bordered Fritillary",
+   "group": "butterflies",
+   "lq": 98.7,
+   "n": 306,
+   "birds": [
+    "Ptarmigan",
+    68.4,
+    142
+   ],
+   "mammals": [
+    "Red Squirrel",
+    4.8,
+    19611
+   ],
+   "herps": [
+    "Adder",
+    2.7,
+    105
+   ],
+   "butterflies": [
+    "Pearl-bordered Fritillary",
+    98.7,
+    306
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Northern Damselfly",
+    85.6,
+    414
+   ],
+   "plants": [
+    "Dwarf Birch",
+    97.7,
+    706
+   ]
+  },
+  "North Aberdeenshire": {
+   "animal": "Wildcat",
+   "group": "mammals",
+   "lq": 48.3,
+   "n": 60,
+   "birds": [
+    "Corn Bunting",
+    13.3,
+    1060
+   ],
+   "mammals": [
+    "Wildcat",
+    48.3,
+    60
+   ],
+   "herps": null,
+   "butterflies": [
+    "Dark Green Fritillary",
+    28.8,
+    883
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Emerald Damselfly",
+    5.9,
+    99
+   ],
+   "plants": [
+    "Masterwort",
+    44.3,
+    44
+   ]
+  },
+  "Banffshire": {
+   "animal": "Scotch Argus",
+   "group": "butterflies",
+   "lq": 67.3,
+   "n": 331,
+   "birds": [
+    "Ptarmigan",
+    49.2,
+    39
+   ],
+   "mammals": [
+    "Mountain Hare",
+    27.0,
+    162
+   ],
+   "herps": [
+    "Common Frog",
+    2.6,
+    91
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    67.3,
+    331
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    12.1,
+    76
+   ],
+   "plants": [
+    "Masterwort",
+    43.3,
+    34
+   ]
+  },
+  "Moray": {
+   "animal": "Crested Tit",
+   "group": "birds",
+   "lq": 146.2,
+   "n": 349,
+   "birds": [
+    "Crested Tit",
+    146.2,
+    349
+   ],
+   "mammals": [
+    "Wildcat",
+    20.9,
+    30
+   ],
+   "herps": [
+    "Common Lizard",
+    2.3,
+    194
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    80.8,
+    446
+   ],
+   "moths": [
+    "Kentish Glory",
+    236.0,
+    246
+   ],
+   "dragonflies": [
+    "Northern Damselfly",
+    40.4,
+    178
+   ],
+   "plants": [
+    "Creeping Lady's-tresses",
+    53.8,
+    317
+   ]
+  },
+  "East Inverness-shire": {
+   "animal": "Scotch Argus",
+   "group": "butterflies",
+   "lq": 108.3,
+   "n": 2449,
+   "birds": [
+    "Capercaillie",
+    62.1,
+    7780
+   ],
+   "mammals": [
+    "Pine Marten",
+    18.6,
+    949
+   ],
+   "herps": [
+    "Palmate Newt",
+    2.7,
+    215
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    108.3,
+    2449
+   ],
+   "moths": [
+    "Kentish Glory",
+    61.8,
+    108
+   ],
+   "dragonflies": [
+    "Northern Damselfly",
+    45.7,
+    571
+   ],
+   "plants": [
+    "Small Cranberry",
+    39.8,
+    72
+   ]
+  },
+  "West Inverness-shire": {
+   "animal": "Chequered Skipper",
+   "group": "butterflies",
+   "lq": 345.8,
+   "n": 861,
+   "birds": [
+    "Ptarmigan",
+    38.0,
+    29
+   ],
+   "mammals": [
+    "Wild Boar",
+    64.6,
+    78
+   ],
+   "herps": [
+    "Palmate Newt",
+    2.3,
+    56
+   ],
+   "butterflies": [
+    "Chequered Skipper",
+    345.8,
+    861
+   ],
+   "moths": [
+    "Argent & Sable",
+    122.7,
+    56
+   ],
+   "dragonflies": [
+    "Azure Hawker",
+    56.0,
+    266
+   ],
+   "plants": [
+    "Northern Rock-cress",
+    36.8,
+    75
+   ]
+  },
+  "Argyll": {
+   "animal": "Chequered Skipper",
+   "group": "butterflies",
+   "lq": 318.7,
+   "n": 1029,
+   "birds": [
+    "Black Grouse",
+    34.8,
+    796
+   ],
+   "mammals": [
+    "Red Squirrel",
+    6.6,
+    6181
+   ],
+   "herps": [
+    "Common Frog",
+    2.1,
+    432
+   ],
+   "butterflies": [
+    "Chequered Skipper",
+    318.7,
+    1029
+   ],
+   "moths": [
+    "Dotted Carpet",
+    16.0,
+    149
+   ],
+   "dragonflies": [
+    "Northern Emerald",
+    17.8,
+    119
+   ],
+   "plants": [
+    "Mountain Avens",
+    29.7,
+    144
+   ]
+  },
+  "Dunbartonshire": {
+   "animal": "Snow Goose",
+   "group": "birds",
+   "lq": 30.9,
+   "n": 70,
+   "birds": [
+    "Snow Goose",
+    30.9,
+    70
+   ],
+   "mammals": [
+    "Red Squirrel",
+    3.6,
+    1803
+   ],
+   "herps": [
+    "Adder",
+    2.5,
+    20
+   ],
+   "butterflies": [
+    "Orange-tip",
+    6.9,
+    171
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    7.6,
+    60
+   ],
+   "plants": [
+    "Tufted Loosestrife",
+    65.2,
+    29
+   ]
+  },
+  "Clyde Isles": {
+   "animal": "Black Guillemot",
+   "group": "birds",
+   "lq": 49.8,
+   "n": 147,
+   "birds": [
+    "Black Guillemot",
+    49.8,
+    147
+   ],
+   "mammals": [
+    "Common Pipistrelle",
+    7.3,
+    13805
+   ],
+   "herps": [
+    "Adder",
+    6.9,
+    90
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    25.2,
+    90
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    11.1,
+    130
+   ],
+   "plants": [
+    "Salmonberry",
+    20.9,
+    87
+   ]
+  },
+  "Kintyre": {
+   "animal": "Scotch Argus",
+   "group": "butterflies",
+   "lq": 63.9,
+   "n": 433,
+   "birds": [
+    "Storm Petrel",
+    50.9,
+    163
+   ],
+   "mammals": [
+    "Beaver",
+    26.2,
+    3246
+   ],
+   "herps": [
+    "Common Toad",
+    2.4,
+    62
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    63.9,
+    433
+   ],
+   "moths": [
+    "Dark-barred Twin-spot Carpet",
+    10.6,
+    27
+   ],
+   "dragonflies": [
+    "Hairy Dragonfly",
+    4.3,
+    317
+   ],
+   "plants": [
+    "Saltmarsh Flat-sedge",
+    19.6,
+    39
+   ]
+  },
+  "South Ebudes": {
+   "animal": "Marsh Fritillary",
+   "group": "butterflies",
+   "lq": 91.2,
+   "n": 553,
+   "birds": [
+    "Hooded Crow",
+    57.8,
+    726
+   ],
+   "mammals": [
+    "Harbour Seal",
+    30.9,
+    38
+   ],
+   "herps": null,
+   "butterflies": [
+    "Marsh Fritillary",
+    91.2,
+    553
+   ],
+   "moths": [
+    "Clouded Buff",
+    46.2,
+    76
+   ],
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    9.9,
+    365
+   ],
+   "plants": [
+    "Bog-sedge",
+    22.3,
+    42
+   ]
+  },
+  "Mid Ebudes": {
+   "animal": "Corncrake",
+   "group": "birds",
+   "lq": 174.8,
+   "n": 25251,
+   "birds": [
+    "Corncrake",
+    174.8,
+    25251
+   ],
+   "mammals": [
+    "Otter",
+    21.2,
+    510
+   ],
+   "herps": [
+    "Common Frog",
+    2.3,
+    153
+   ],
+   "butterflies": null,
+   "moths": [
+    "Red Sword-grass",
+    41.5,
+    115
+   ],
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    5.7,
+    298
+   ],
+   "plants": [
+    "Iceland-purslane",
+    244.1,
+    361
+   ]
+  },
+  "North Ebudes": {
+   "animal": "Manx Shearwater",
+   "group": "birds",
+   "lq": 65.8,
+   "n": 527,
+   "birds": [
+    "Manx Shearwater",
+    65.8,
+    527
+   ],
+   "mammals": [
+    "Otter",
+    18.5,
+    1025
+   ],
+   "herps": [
+    "Palmate Newt",
+    3.1,
+    53
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    34.6,
+    185
+   ],
+   "moths": [
+    "Common Rush Case-bearer",
+    40.1,
+    60
+   ],
+   "dragonflies": [
+    "Golden-ringed Dragonfly",
+    8.6,
+    361
+   ],
+   "plants": [
+    "Northern Rock-cress",
+    37.7,
+    73
+   ]
+  },
+  "West Ross": {
+   "animal": "Black-throated Diver",
+   "group": "birds",
+   "lq": 238.9,
+   "n": 626,
+   "birds": [
+    "Black-throated Diver",
+    238.9,
+    626
+   ],
+   "mammals": [
+    "Pine Marten",
+    21.9,
+    178
+   ],
+   "herps": [
+    "Palmate Newt",
+    4.2,
+    97
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    67.3,
+    249
+   ],
+   "moths": [
+    "Mottled Grey",
+    27.0,
+    49
+   ],
+   "dragonflies": [
+    "Azure Hawker",
+    74.4,
+    378
+   ],
+   "plants": [
+    "Cotula alpina",
+    144.9,
+    146
+   ]
+  },
+  "East Ross": {
+   "animal": "Scotch Argus",
+   "group": "butterflies",
+   "lq": 30.8,
+   "n": 148,
+   "birds": [
+    "Scottish Crossbill",
+    24.1,
+    93
+   ],
+   "mammals": [
+    "Wildcat",
+    25.8,
+    31
+   ],
+   "herps": [
+    "Palmate Newt",
+    5.2,
+    439
+   ],
+   "butterflies": [
+    "Scotch Argus",
+    30.8,
+    148
+   ],
+   "moths": [
+    "Juniper Pug",
+    30.9,
+    51
+   ],
+   "dragonflies": [
+    "White-faced Darter",
+    9.8,
+    118
+   ],
+   "plants": [
+    "Alpine Bearberry",
+    53.8,
+    281
+   ]
+  },
+  "East Sutherland": {
+   "animal": "Black-throated Diver",
+   "group": "birds",
+   "lq": 79.3,
+   "n": 274,
+   "birds": [
+    "Black-throated Diver",
+    79.3,
+    274
+   ],
+   "mammals": [
+    "Pine Marten",
+    14.3,
+    104
+   ],
+   "herps": [
+    "Common Lizard",
+    2.2,
+    77
+   ],
+   "butterflies": [
+    "Pearl-bordered Fritillary",
+    28.9,
+    408
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Azure Hawker",
+    54.8,
+    41
+   ],
+   "plants": [
+    "Great Sundew",
+    28.5,
+    632
+   ]
+  },
+  "West Sutherland": {
+   "animal": "Large Heath",
+   "group": "butterflies",
+   "lq": 158.1,
+   "n": 60,
+   "birds": [
+    "Black-throated Diver",
+    99.0,
+    571
+   ],
+   "mammals": [
+    "Field Vole",
+    52.6,
+    495
+   ],
+   "herps": [
+    "Common Lizard",
+    2.4,
+    175
+   ],
+   "butterflies": [
+    "Large Heath",
+    158.1,
+    60
+   ],
+   "moths": [
+    "Gold Spangle",
+    23.2,
+    48
+   ],
+   "dragonflies": [
+    "Azure Hawker",
+    16.8,
+    27
+   ],
+   "plants": [
+    "Pyramidal Bugle",
+    127.6,
+    84
+   ]
+  },
+  "Caithness": {
+   "animal": "Long-tailed Duck",
+   "group": "birds",
+   "lq": 25.3,
+   "n": 299,
+   "birds": [
+    "Long-tailed Duck",
+    25.3,
+    299
+   ],
+   "mammals": [
+    "Weasel",
+    17.2,
+    38
+   ],
+   "herps": [
+    "Palmate Newt",
+    2.8,
+    20
+   ],
+   "butterflies": [
+    "Small Blue",
+    18.7,
+    284
+   ],
+   "moths": null,
+   "dragonflies": [
+    "Common Hawker",
+    13.8,
+    168
+   ],
+   "plants": [
+    "Water Sedge",
+    39.9,
+    44
+   ]
+  },
+  "Outer Hebrides": {
+   "animal": "Common Dolphin",
+   "group": "mammals",
+   "lq": 193.9,
+   "n": 72,
+   "birds": [
+    "Leach's Petrel",
+    114.3,
+    239
+   ],
+   "mammals": [
+    "Common Dolphin",
+    193.9,
+    72
+   ],
+   "herps": [
+    "Common Frog",
+    3.9,
+    297
+   ],
+   "butterflies": [
+    "Large Heath",
+    123.4,
+    150
+   ],
+   "moths": [
+    "Northern Mottled Cloak",
+    21.2,
+    225
+   ],
+   "dragonflies": [
+    "Common Hawker",
+    6.9,
+    318
+   ],
+   "plants": [
+    "Spiral Tasselweed",
+    58.2,
+    63
+   ]
+  },
+  "Orkney": {
+   "animal": "Stoat",
+   "group": "mammals",
+   "lq": 130.6,
+   "n": 874,
+   "birds": [
+    "Barred Warbler",
+    38.7,
+    162
+   ],
+   "mammals": [
+    "Stoat",
+    130.6,
+    874
+   ],
+   "herps": [
+    "Common Frog",
+    4.0,
+    441
+   ],
+   "butterflies": null,
+   "moths": null,
+   "dragonflies": [
+    "Black Darter",
+    10.5,
+    505
+   ],
+   "plants": [
+    "Northern Knotgrass",
+    141.9,
+    113
+   ]
+  },
+  "Shetland": {
+   "animal": "Harbour Seal",
+   "group": "mammals",
+   "lq": 143.1,
+   "n": 51,
+   "birds": [
+    "Great Skua",
+    70.2,
+    1034
+   ],
+   "mammals": [
+    "Harbour Seal",
+    143.1,
+    51
+   ],
+   "herps": null,
+   "butterflies": null,
+   "moths": null,
+   "dragonflies": null,
+   "plants": [
+    "Oysterplant",
+    77.9,
+    29
+   ]
+  },
+  "Fermanagh": {
+   "animal": "Hooded Crow",
+   "group": "birds",
+   "lq": 37.5,
+   "n": 690,
+   "birds": [
+    "Hooded Crow",
+    37.5,
+    690
+   ],
+   "mammals": [
+    "Pine Marten",
+    32.5,
+    237
+   ],
+   "herps": null,
+   "butterflies": [
+    "Marsh Fritillary",
+    9.1,
+    54
+   ],
+   "moths": [
+    "Brussels Lace",
+    15.9,
+    38
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    16.4,
+    33
+   ],
+   "plants": [
+    "Cowbane",
+    50.8,
+    179
+   ]
+  },
+  "Tyrone": {
+   "animal": "Hooded Crow",
+   "group": "birds",
+   "lq": 49.0,
+   "n": 658,
+   "birds": [
+    "Hooded Crow",
+    49.0,
+    658
+   ],
+   "mammals": [
+    "Mountain Hare",
+    18.3,
+    116
+   ],
+   "herps": null,
+   "butterflies": null,
+   "moths": [
+    "Pink-barred Sallow",
+    9.5,
+    23
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    23.7,
+    32
+   ],
+   "plants": [
+    "Salmonberry",
+    23.9,
+    144
+   ]
+  },
+  "Armagh": {
+   "animal": "Hooded Crow",
+   "group": "birds",
+   "lq": 35.9,
+   "n": 623,
+   "birds": [
+    "Hooded Crow",
+    35.9,
+    623
+   ],
+   "mammals": [
+    "Mountain Hare",
+    27.1,
+    104
+   ],
+   "herps": null,
+   "butterflies": [
+    "Large Heath",
+    23.4,
+    70
+   ],
+   "moths": [
+    "Sharp-angled Carpet",
+    19.3,
+    55
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    20.8,
+    29
+   ],
+   "plants": [
+    "Salmonberry",
+    14.6,
+    53
+   ]
+  },
+  "Down": {
+   "animal": "Grey Seal",
+   "group": "mammals",
+   "lq": 66.7,
+   "n": 1897,
+   "birds": [
+    "Hooded Crow",
+    25.7,
+    1244
+   ],
+   "mammals": [
+    "Grey Seal",
+    66.7,
+    1897
+   ],
+   "herps": [
+    "Common Lizard",
+    4.0,
+    208
+   ],
+   "butterflies": [
+    "Marsh Fritillary",
+    16.0,
+    340
+   ],
+   "moths": [
+    "Clouded Magpie",
+    12.3,
+    76
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    8.8,
+    31
+   ],
+   "plants": [
+    "Two-spined Acaena",
+    38.4,
+    60
+   ]
+  },
+  "Antrim": {
+   "animal": "Common Porpoise",
+   "group": "mammals",
+   "lq": 38.6,
+   "n": 285,
+   "birds": [
+    "Hooded Crow",
+    28.5,
+    1255
+   ],
+   "mammals": [
+    "Common Porpoise",
+    38.6,
+    285
+   ],
+   "herps": [
+    "Common Lizard",
+    4.2,
+    274
+   ],
+   "butterflies": [
+    "Green-veined White",
+    4.3,
+    6881
+   ],
+   "moths": [
+    "Plain Golden Y",
+    6.8,
+    199
+   ],
+   "dragonflies": [
+    "Variable Damselfly",
+    12.6,
+    35
+   ],
+   "plants": [
+    "Stream Water-crowfoot",
+    13.5,
+    200
+   ]
+  },
+  "Londonderry": {
+   "animal": "Common Porpoise",
+   "group": "mammals",
+   "lq": 75.6,
+   "n": 135,
+   "birds": [
+    "Hooded Crow",
+    30.8,
+    574
+   ],
+   "mammals": [
+    "Common Porpoise",
+    75.6,
+    135
+   ],
+   "herps": null,
+   "butterflies": [
+    "Marsh Fritillary",
+    4.0,
+    28
+   ],
+   "moths": [
+    "Double Dart",
+    24.1,
+    87
+   ],
+   "dragonflies": null,
+   "plants": [
+    "Salmonberry",
+    26.7,
+    118
+   ]
+  }
+ },
+ "signature_animal_by_group": {
+  "dragonflies": 8,
+  "birds": 45,
+  "mammals": 33,
+  "herps": 6,
+  "butterflies": 26
+ },
+ "signature_animal_species_counts": [
+  [
+   "Scotch Argus",
+   6
+  ],
+  [
+   "Chinese Water Deer",
+   4
+  ],
+  [
+   "Large Heath",
+   4
+  ],
+  [
+   "Black Grouse",
+   4
+  ],
+  [
+   "Common Porpoise",
+   3
+  ],
+  [
+   "Harvest Mouse",
+   3
+  ],
+  [
+   "Natterjack Toad",
+   3
+  ],
+  [
+   "Chough",
+   3
+  ],
+  [
+   "Hooded Crow",
+   3
+  ],
+  [
+   "Stone-curlew",
+   2
+  ],
+  [
+   "Southern Emerald Damselfly",
+   2
+  ],
+  [
+   "Muntjac",
+   2
+  ]
+ ],
+ "distinct": {
+  "birds": [
+   [
+    "Mid Ebudes",
+    0.599,
+    0.619
+   ],
+   [
+    "Outer Hebrides",
+    0.567,
+    0.582
+   ],
+   [
+    "Shetland",
+    0.536,
+    0.551
+   ],
+   [
+    "West Ross",
+    0.497,
+    0.532
+   ],
+   [
+    "South Ebudes",
+    0.495,
+    0.525
+   ]
+  ],
+  "mammals": [
+   [
+    "Outer Hebrides",
+    0.811,
+    0.853
+   ],
+   [
+    "Orkney",
+    0.776,
+    0.818
+   ],
+   [
+    "Mid Ebudes",
+    0.734,
+    0.785
+   ],
+   [
+    "Kintyre",
+    0.724,
+    0.753
+   ],
+   [
+    "North Lincolnshire",
+    0.72,
+    0.736
+   ]
+  ],
+  "herps": [
+   [
+    "Orkney",
+    0.62,
+    0.674
+   ],
+   [
+    "Isle of Man",
+    0.582,
+    0.668
+   ],
+   [
+    "Antrim",
+    0.549,
+    0.604
+   ],
+   [
+    "Down",
+    0.535,
+    0.599
+   ],
+   [
+    "Outer Hebrides",
+    0.517,
+    0.584
+   ]
+  ],
+  "butterflies": [
+   [
+    "West Inverness-shire",
+    0.635,
+    0.656
+   ],
+   [
+    "East Sutherland",
+    0.581,
+    0.603
+   ],
+   [
+    "Outer Hebrides",
+    0.564,
+    0.599
+   ],
+   [
+    "Caithness",
+    0.558,
+    0.588
+   ],
+   [
+    "Mid Perthshire",
+    0.549,
+    0.591
+   ]
+  ],
+  "moths": [
+   [
+    "Outer Hebrides",
+    0.554,
+    0.603
+   ],
+   [
+    "Moray",
+    0.551,
+    0.761
+   ],
+   [
+    "Mid Perthshire",
+    0.488,
+    0.739
+   ],
+   [
+    "West Sutherland",
+    0.467,
+    0.626
+   ],
+   [
+    "Buckinghamshire",
+    0.453,
+    0.71
+   ]
+  ],
+  "dragonflies": [
+   [
+    "Orkney",
+    0.634,
+    0.672
+   ],
+   [
+    "East Inverness-shire",
+    0.618,
+    0.635
+   ],
+   [
+    "West Inverness-shire",
+    0.606,
+    0.63
+   ],
+   [
+    "West Ross",
+    0.595,
+    0.619
+   ],
+   [
+    "Mid Perthshire",
+    0.585,
+    0.624
+   ]
+  ],
+  "plants": [
+   [
+    "West Ross",
+    0.506,
+    0.554
+   ],
+   [
+    "Outer Hebrides",
+    0.497,
+    0.543
+   ],
+   [
+    "Shetland",
+    0.487,
+    0.564
+   ],
+   [
+    "West Sutherland",
+    0.484,
+    0.539
+   ],
+   [
+    "West Inverness-shire",
+    0.467,
+    0.507
+   ]
+  ]
+ },
+ "distinct_least": {
+  "birds": [
+   [
+    "South-west Yorkshire",
+    0.109
+   ],
+   [
+    "Cheshire",
+    0.114
+   ],
+   [
+    "Staffordshire",
+    0.115
+   ]
+  ],
+  "mammals": [
+   [
+    "Herefordshire",
+    0.316
+   ],
+   [
+    "Stirlingshire",
+    0.329
+   ],
+   [
+    "Derbyshire",
+    0.347
+   ]
+  ],
+  "herps": [
+   [
+    "North-west Yorkshire",
+    0.105
+   ],
+   [
+    "Derbyshire",
+    0.123
+   ],
+   [
+    "Radnorshire",
+    0.124
+   ]
+  ],
+  "butterflies": [
+   [
+    "Berkshire",
+    0.079
+   ],
+   [
+    "North Somerset",
+    0.083
+   ],
+   [
+    "Hertfordshire",
+    0.094
+   ]
+  ],
+  "moths": [
+   [
+    "Bedfordshire",
+    0.131
+   ],
+   [
+    "Leicestershire",
+    0.167
+   ],
+   [
+    "Berkshire",
+    0.174
+   ]
+  ],
+  "dragonflies": [
+   [
+    "North-east Yorkshire",
+    0.121
+   ],
+   [
+    "Cheshire",
+    0.124
+   ],
+   [
+    "South-west Yorkshire",
+    0.127
+   ]
+  ],
+  "plants": [
+   [
+    "Flintshire",
+    0.114
+   ],
+   [
+    "Denbighshire",
+    0.123
+   ],
+   [
+    "North-east Yorkshire",
+    0.124
+   ]
+  ]
+ },
+ "only_here": {
+  "total_species": 111,
+  "by_group": {
+   "plants": 57,
+   "moths": 45,
+   "herps": 1,
+   "birds": 6,
+   "mammals": 1,
+   "dragonflies": 1
+  },
+  "top_counties": [
+   [
+    "West Cornwall",
+    14
+   ],
+   [
+    "Berkshire",
+    14
+   ],
+   [
+    "East Kent",
+    6
+   ],
+   [
+    "North Somerset",
+    5
+   ],
+   [
+    "Dorset",
+    4
+   ],
+   [
+    "Leicestershire",
+    4
+   ],
+   [
+    "North Essex",
+    3
+   ],
+   [
+    "East Suffolk",
+    3
+   ]
+  ]
+ },
+ "distinct_animals": [
+  [
+   "Shetland",
+   0.626
+  ],
+  [
+   "Orkney",
+   0.613
+  ],
+  [
+   "Outer Hebrides",
+   0.592
+  ],
+  [
+   "Mid Ebudes",
+   0.539
+  ],
+  [
+   "West Inverness-shire",
+   0.524
+  ],
+  [
+   "South Ebudes",
+   0.508
+  ],
+  [
+   "West Sutherland",
+   0.503
+  ],
+  [
+   "West Ross",
+   0.486
+  ],
+  [
+   "Isle of Man",
+   0.483
+  ],
+  [
+   "Caithness",
+   0.483
+  ],
+  [
+   "Mid Perthshire",
+   0.479
+  ],
+  [
+   "Argyll",
+   0.478
+  ],
+  [
+   "East Inverness-shire",
+   0.476
+  ],
+  [
+   "North Ebudes",
+   0.472
+  ],
+  [
+   "Kintyre",
+   0.462
+  ],
+  [
+   "East Sutherland",
+   0.458
+  ],
+  [
+   "Moray",
+   0.457
+  ],
+  [
+   "North Aberdeenshire",
+   0.453
+  ],
+  [
+   "Banffshire",
+   0.447
+  ],
+  [
+   "Clyde Isles",
+   0.441
+  ],
+  [
+   "East Perthshire",
+   0.436
+  ],
+  [
+   "Renfrewshire",
+   0.434
+  ],
+  [
+   "South Aberdeenshire",
+   0.419
+  ],
+  [
+   "Lanarkshire",
+   0.418
+  ],
+  [
+   "Kincardineshire",
+   0.412
+  ],
+  [
+   "East Ross",
+   0.412
+  ],
+  [
+   "Angus",
+   0.403
+  ],
+  [
+   "Tyrone",
+   0.402
+  ],
+  [
+   "Dunbartonshire",
+   0.401
+  ],
+  [
+   "Peeblesshire",
+   0.384
+  ],
+  [
+   "Fifeshire",
+   0.381
+  ],
+  [
+   "West Perthshire",
+   0.379
+  ],
+  [
+   "Fermanagh",
+   0.379
+  ],
+  [
+   "Kirkcudbrightshire",
+   0.378
+  ],
+  [
+   "Antrim",
+   0.378
+  ],
+  [
+   "Ayrshire",
+   0.374
+  ],
+  [
+   "Wigtownshire",
+   0.37
+  ],
+  [
+   "West Lothian",
+   0.364
+  ],
+  [
+   "Dumfriesshire",
+   0.362
+  ],
+  [
+   "Roxburghshire",
+   0.355
+  ],
+  [
+   "Down",
+   0.354
+  ],
+  [
+   "Merionethshire",
+   0.353
+  ],
+  [
+   "Midlothian",
+   0.351
+  ],
+  [
+   "East Lothian",
+   0.348
+  ],
+  [
+   "Stirlingshire",
+   0.338
+  ],
+  [
+   "Armagh",
+   0.329
+  ],
+  [
+   "Selkirkshire",
+   0.327
+  ],
+  [
+   "Caernarvonshire",
+   0.321
+  ],
+  [
+   "Berwickshire",
+   0.321
+  ],
+  [
+   "Londonderry",
+   0.321
+  ],
+  [
+   "Pembrokeshire",
+   0.31
+  ],
+  [
+   "Huntingdonshire",
+   0.308
+  ],
+  [
+   "Anglesey",
+   0.308
+  ],
+  [
+   "North Northumberland",
+   0.304
+  ],
+  [
+   "West Cornwall",
+   0.298
+  ],
+  [
+   "North-west Yorkshire",
+   0.297
+  ],
+  [
+   "Flintshire",
+   0.296
+  ],
+  [
+   "North Lincolnshire",
+   0.295
+  ],
+  [
+   "South Wiltshire",
+   0.293
+  ],
+  [
+   "East Cornwall",
+   0.29
+  ],
+  [
+   "Cumberland",
+   0.286
+  ],
+  [
+   "Cardiganshire",
+   0.284
+  ],
+  [
+   "Isle of Wight",
+   0.283
+  ],
+  [
+   "Denbighshire",
+   0.277
+  ],
+  [
+   "Breconshire",
+   0.276
+  ],
+  [
+   "South Devon",
+   0.275
+  ],
+  [
+   "Radnorshire",
+   0.271
+  ],
+  [
+   "Middlesex",
+   0.269
+  ],
+  [
+   "Carmarthenshire",
+   0.266
+  ],
+  [
+   "Westmorland",
+   0.264
+  ],
+  [
+   "Northamptonshire",
+   0.256
+  ],
+  [
+   "Montgomeryshire",
+   0.255
+  ],
+  [
+   "North Devon",
+   0.25
+  ],
+  [
+   "West Lancashire",
+   0.25
+  ],
+  [
+   "South Lancashire",
+   0.249
+  ],
+  [
+   "South Lincolnshire",
+   0.248
+  ],
+  [
+   "East Suffolk",
+   0.243
+  ],
+  [
+   "Cambridgeshire",
+   0.243
+  ],
+  [
+   "South Northumberland",
+   0.242
+  ],
+  [
+   "West Suffolk",
+   0.241
+  ],
+  [
+   "Oxfordshire",
+   0.237
+  ],
+  [
+   "Glamorganshire",
+   0.237
+  ],
+  [
+   "Dorset",
+   0.232
+  ],
+  [
+   "South-east Yorkshire",
+   0.23
+  ],
+  [
+   "Warwickshire",
+   0.229
+  ],
+  [
+   "County Durham",
+   0.225
+  ],
+  [
+   "Bedfordshire",
+   0.224
+  ],
+  [
+   "Nottinghamshire",
+   0.224
+  ],
+  [
+   "North Hampshire",
+   0.223
+  ],
+  [
+   "South Essex",
+   0.222
+  ],
+  [
+   "North Wiltshire",
+   0.221
+  ],
+  [
+   "East Norfolk",
+   0.221
+  ],
+  [
+   "Leicestershire",
+   0.221
+  ],
+  [
+   "Surrey",
+   0.22
+  ],
+  [
+   "South Somerset",
+   0.219
+  ],
+  [
+   "North Essex",
+   0.218
+  ],
+  [
+   "Shropshire",
+   0.217
+  ],
+  [
+   "Buckinghamshire",
+   0.215
+  ],
+  [
+   "West Norfolk",
+   0.215
+  ],
+  [
+   "East Gloucestershire",
+   0.215
+  ],
+  [
+   "Staffordshire",
+   0.215
+  ],
+  [
+   "Herefordshire",
+   0.214
+  ],
+  [
+   "North-east Yorkshire",
+   0.214
+  ],
+  [
+   "East Sussex",
+   0.213
+  ],
+  [
+   "Cheshire",
+   0.213
+  ],
+  [
+   "Hertfordshire",
+   0.212
+  ],
+  [
+   "East Kent",
+   0.209
+  ],
+  [
+   "Worcestershire",
+   0.209
+  ],
+  [
+   "Mid-west Yorkshire",
+   0.209
+  ],
+  [
+   "South Hampshire",
+   0.202
+  ],
+  [
+   "West Sussex",
+   0.201
+  ],
+  [
+   "West Kent",
+   0.196
+  ],
+  [
+   "Monmouthshire",
+   0.194
+  ],
+  [
+   "Berkshire",
+   0.191
+  ],
+  [
+   "North Somerset",
+   0.188
+  ],
+  [
+   "West Gloucestershire",
+   0.188
+  ],
+  [
+   "South-west Yorkshire",
+   0.18
+  ],
+  [
+   "Derbyshire",
+   0.179
+  ]
+ ],
+ "distinct_nation_mean": {
+  "England": 0.234,
+  "Isle of Man": 0.483,
+  "Northern Ireland": 0.361,
+  "Scotland": 0.436,
+  "Wales": 0.281
+ },
+ "newcomers": [
+  {
+   "species": "Harlequin ladybird",
+   "scientific": "Harmonia axyridis",
+   "status": "non-native",
+   "vc_1970-1989": 0,
+   "rec_1970-1989": 0,
+   "vc_1990-1999": 0,
+   "rec_1990-1999": 0,
+   "vc_2000-2009": 72,
+   "rec_2000-2009": 24322,
+   "vc_2010-2019": 85,
+   "rec_2010-2019": 34529,
+   "vc_2020-2026": 91,
+   "rec_2020-2026": 29597
+  },
+  {
+   "species": "Tree bumblebee",
+   "scientific": "Bombus hypnorum",
+   "status": "natural colonist",
+   "vc_1970-1989": 0,
+   "rec_1970-1989": 1,
+   "vc_1990-1999": 0,
+   "rec_1990-1999": 0,
+   "vc_2000-2009": 9,
+   "rec_2000-2009": 53,
+   "vc_2010-2019": 100,
+   "rec_2010-2019": 21004,
+   "vc_2020-2026": 109,
+   "rec_2020-2026": 13231
+  },
+  {
+   "species": "Ring-necked parakeet",
+   "scientific": "Psittacula krameri",
+   "status": "non-native",
+   "vc_1970-1989": 3,
+   "rec_1970-1989": 55,
+   "vc_1990-1999": 8,
+   "rec_1990-1999": 103,
+   "vc_2000-2009": 15,
+   "rec_2000-2009": 1770,
+   "vc_2010-2019": 26,
+   "rec_2010-2019": 4545,
+   "vc_2020-2026": 56,
+   "rec_2020-2026": 9969
+  },
+  {
+   "species": "Egyptian goose",
+   "scientific": "Alopochen aegyptiaca",
+   "status": "non-native",
+   "vc_1970-1989": 5,
+   "rec_1970-1989": 44,
+   "vc_1990-1999": 10,
+   "rec_1990-1999": 216,
+   "vc_2000-2009": 55,
+   "rec_2000-2009": 3537,
+   "vc_2010-2019": 56,
+   "rec_2010-2019": 19496,
+   "vc_2020-2026": 61,
+   "rec_2020-2026": 18775
+  },
+  {
+   "species": "Little egret",
+   "scientific": "Egretta garzetta",
+   "status": "natural colonist",
+   "vc_1970-1989": 1,
+   "rec_1970-1989": 12,
+   "vc_1990-1999": 12,
+   "rec_1990-1999": 150,
+   "vc_2000-2009": 79,
+   "rec_2000-2009": 17817,
+   "vc_2010-2019": 103,
+   "rec_2010-2019": 56277,
+   "vc_2020-2026": 104,
+   "rec_2020-2026": 47285
+  },
+  {
+   "species": "Cetti's warbler",
+   "scientific": "Cettia cetti",
+   "status": "natural colonist",
+   "vc_1970-1989": 20,
+   "rec_1970-1989": 537,
+   "vc_1990-1999": 32,
+   "rec_1990-1999": 1328,
+   "vc_2000-2009": 49,
+   "rec_2000-2009": 6978,
+   "vc_2010-2019": 63,
+   "rec_2010-2019": 18770,
+   "vc_2020-2026": 73,
+   "rec_2020-2026": 22831
+  },
+  {
+   "species": "Small red-eyed damselfly",
+   "scientific": "Erythromma viridulum",
+   "status": "natural colonist",
+   "vc_1970-1989": 0,
+   "rec_1970-1989": 0,
+   "vc_1990-1999": 0,
+   "rec_1990-1999": 1,
+   "vc_2000-2009": 38,
+   "rec_2000-2009": 3447,
+   "vc_2010-2019": 53,
+   "rec_2010-2019": 5434,
+   "vc_2020-2026": 60,
+   "rec_2020-2026": 6270
+  },
+  {
+   "species": "Reeves' muntjac",
+   "scientific": "Muntiacus reevesi",
+   "status": "non-native",
+   "vc_1970-1989": 51,
+   "rec_1970-1989": 1445,
+   "vc_1990-1999": 49,
+   "rec_1990-1999": 557,
+   "vc_2000-2009": 53,
+   "rec_2000-2009": 1632,
+   "vc_2010-2019": 48,
+   "rec_2010-2019": 3615,
+   "vc_2020-2026": 61,
+   "rec_2020-2026": 16462
+  },
+  {
+   "species": "Grey squirrel",
+   "scientific": "Sciurus carolinensis",
+   "status": "non-native",
+   "vc_1970-1989": 85,
+   "rec_1970-1989": 3516,
+   "vc_1990-1999": 94,
+   "rec_1990-1999": 7696,
+   "vc_2000-2009": 101,
+   "rec_2000-2009": 23329,
+   "vc_2010-2019": 99,
+   "rec_2010-2019": 66900,
+   "vc_2020-2026": 99,
+   "rec_2020-2026": 166050
+  },
+  {
+   "species": "Red squirrel",
+   "scientific": "Sciurus vulgaris",
+   "status": "native",
+   "vc_1970-1989": 65,
+   "rec_1970-1989": 1951,
+   "vc_1990-1999": 51,
+   "rec_1990-1999": 6953,
+   "vc_2000-2009": 62,
+   "rec_2000-2009": 16175,
+   "vc_2010-2019": 59,
+   "rec_2010-2019": 57525,
+   "vc_2020-2026": 62,
+   "rec_2020-2026": 85884
+  }
+ ],
+ "periods": [
+  "1970-1989",
+  "1990-1999",
+  "2000-2009",
+  "2010-2019",
+  "2020-2026"
+ ]
+}
